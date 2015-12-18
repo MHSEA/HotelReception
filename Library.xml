@@ -4,52 +4,53 @@
 <mylibrary>      <!-- the one Hotel Reception conatining alle the info -->
 
 	<name>Hotel Reception</name>            <!--All attributes of the Hotel Reception object -->
-	<city>Ealing</city>
-	<street>St Marys Road</street>
-	<housenumber>11</housenumber>
-	<postcode>W 13</postcode>	
+	<city>London</city>
+	<street>Thomas Street, London, United Kingdom</street>
+	<housenumber>1 St</housenumber>
+	<postcode>SE1 9QU</postcode>
+	<tel>T:(44 20) 7234 8000</tel>	
 	
 	<Room>                                       <!-- An Instance of a book -->
 		<autor>Dostoyjewski</autor>              <!-- And its attributes -->
 		<title>Single</title>
 		<isbn>12345Sn</isbn>
-		<location>shelf 3 row 4</location>
+		<location>Single Rooms are available at Floor 10 to 19</location>
 		<isBooked>001</isBooked>
 	</Room>
 	<Room>
 		<autor>Herbert George Wells</autor>
 		<title>Double</title>
 		<isbn>12345Sn4567</isbn>
-		<location>shelf 4 row 5</location>
+		<location>Double Rooms are available at Floor 20 to 29</location>
 		<isBooked>null</isBooked>
 	</Room>
 	<Room>
 		<autor>Herbert George Wells</autor>
 		<title>Twin</title>
 		<isbn>375954Fe4599</isbn>
-		<location>shelf 7 row 11</location>
+		<location>Twin Rooms are available at Floor 30 to 39</location>
 		<isBooked>null</isBooked>
 	</Room>
 	<Room>                                       <!-- An Instance of a book -->
 		<autor>Dostoyjewski</autor>              <!-- And its attributes -->
 		<title>Triple</title>
 		<isbn>12345Sn</isbn>
-		<location>shelf 3 row 4</location>
+		<location>Triple Rooms are available at Floor 40 to 49</location>
 		<isBooked>001</isBooked>
 	</Room>
 	<Room>
 		<autor>Herbert George Wells</autor>
 		<title>Quads</title>
 		<isbn>12345Sn4567</isbn>
-		<location>shelf 4 row 5</location>
+		<location>Quad Rooms are available at Floor 50 to 59</location>
 		<isBooked>null</isBooked>
 	</Room>
 	<Room>>
 		<autor>Herbert George Wells</autor>
 		<title>Suites</title>
 		<isbn>375954Fe4599</isbn>
-		<location>shelf 7 row 11</location>
-		<isBooked>null</isBooked>
+		<location>Suites are available at Floor 60, 61, 62, 63, 64, 65</location>
+		<isBooked>001</isBooked>
 	</Room>>
 	
 	<Member>

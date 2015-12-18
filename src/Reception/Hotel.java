@@ -32,7 +32,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="housenumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
  *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Book" type="{}Book" maxOccurs="unbounded"/>
+ *         &lt;element name="tel" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Room" type="{}Room" maxOccurs="unbounded"/>
  *         &lt;element name="Customer" type="{}Customer" maxOccurs="unbounded"/>
  *         &lt;element name="Amenity" type="{}Amenity" maxOccurs="unbounded"/>
  *         &lt;element name="Booking" type="{}Booking" maxOccurs="unbounded"/>
@@ -51,6 +52,7 @@ import javax.xml.bind.annotation.XmlType;
     "street",
     "housenumber",
     "postcode",
+    "tel",
     "room",
     "Customer",
     "Amenity",
@@ -68,6 +70,8 @@ public class Hotel {
     protected BigInteger housenumber;
     @XmlElement(required = true)
     protected String postcode;
+    @XmlElement(required = true)
+    protected String tel;
     @XmlElement(name = "Room", required = true)
     protected List<Room> room;
     @XmlElement(name = "Customer", required = true)
@@ -184,6 +188,8 @@ public class Hotel {
     public String getPostcode() {
         return postcode;
     }
+    
+
 
     /**
      * Sets the value of the postcode property.
@@ -195,6 +201,30 @@ public class Hotel {
      */
     public void setPostcode(String value) {
         this.postcode = value;
+    }
+    
+    /**
+     * Gets the value of the tel property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTel() {
+        return tel;
+    }
+    
+    /**
+     * Sets the value of the tel property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTel(String value) {
+        this.tel = value;
     }
 
     /**
