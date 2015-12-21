@@ -33,6 +33,7 @@ public class MainReception {
 		Input = new JTextField(80);	
 		Inputlabel = new JLabel("Question");
 		Input.setBorder(null);
+		//test
 		//Input.setOpaque(false);
 		
 		
