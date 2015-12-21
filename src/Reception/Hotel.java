@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="housenumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="housenumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="tel" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="Room" type="{}Room" maxOccurs="unbounded"/>
@@ -67,13 +67,15 @@ public class Hotel {
     @XmlElement(required = true)
     protected String street;
     @XmlElement(required = true)
-    protected BigInteger housenumber;
+    protected String housenumber;
     @XmlElement(required = true)
     protected String postcode;
     @XmlElement(required = true)
     protected String tel;
+    
     @XmlElement(name = "Room", required = true)
     protected List<Room> room;
+    
     @XmlElement(name = "Customer", required = true)
     protected List<Customer> Customer;
     @XmlElement(name = "Amenity", required = true)
@@ -152,30 +154,35 @@ public class Hotel {
     public void setStreet(String value) {
         this.street = value;
     }
-
+    
+    
+    
     /**
-     * Gets the value of the housenumber property.
+     * Gets the value of the street property.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getHousenumber() {
+    public String getHousenumber() {
         return housenumber;
     }
 
     /**
-     * Sets the value of the housenumber property.
+     * Sets the value of the street property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setHousenumber(BigInteger value) {
+    public void setHousenumber(String value) {
         this.housenumber = value;
     }
+    
+    
+    
 
     /**
      * Gets the value of the postcode property.

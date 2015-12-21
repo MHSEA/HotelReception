@@ -25,13 +25,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="surname" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="age" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="memberid" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="customerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="firsName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="housenumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
  *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="hasbooked" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -44,10 +42,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Customer", propOrder = {
-    "surname",
-    "lastname",
-    "age",
-    "memberid",
+	"customerID",
+    "firsName",
+    "lastName",
     "city",
     "street",
     "housenumber",
@@ -55,121 +52,97 @@ import javax.xml.bind.annotation.XmlType;
     "hasbooked"
 })
 public class Customer {
-
+	
     @XmlElement(required = true)
-    protected String surname;
+    protected String customerID;
     @XmlElement(required = true)
-    protected String lastname;
+    protected String firsName;
     @XmlElement(required = true)
-    protected BigInteger age;
-    @XmlElement(required = true)
-    protected String memberid;
+    protected String lastName;
     @XmlElement(required = true)
     protected String city;
     @XmlElement(required = true)
     protected String street;
     @XmlElement(required = true)
-    protected BigInteger housenumber;
+    protected String housenumber;
     @XmlElement(required = true)
     protected String postcode;
     @XmlElement(required = true)
     protected String hasbooked;
-
+    
     /**
-     * Gets the value of the surname property.
+     * Gets the value of the customerID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSurname() {
-        return surname;
+    public String getcustomerID() {
+        return customerID;
     }
 
     /**
-     * Sets the value of the surname property.
+     * Sets the value of the customerID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSurname(String value) {
-        this.surname = value;
+    public void setcustomerID(String value) {
+        this.customerID = value;
     }
 
     /**
-     * Gets the value of the lastname property.
+     * Gets the value of the firsName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLastname() {
-        return lastname;
+    public String getfirsName() {
+        return firsName;
     }
 
     /**
-     * Sets the value of the lastname property.
+     * Sets the value of the firsName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLastname(String value) {
-        this.lastname = value;
+    public void setfirsName(String value) {
+        this.firsName = value;
     }
 
     /**
-     * Gets the value of the age property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getAge() {
-        return age;
-    }
-
-    /**
-     * Sets the value of the age property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setAge(BigInteger value) {
-        this.age = value;
-    }
-
-    /**
-     * Gets the value of the memberid property.
+     * Gets the value of the lastName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMemberid() {
-        return memberid;
+    public String getlastName() {
+        return lastName;
     }
 
     /**
-     * Sets the value of the memberid property.
+     * Sets the value of the lastName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMemberid(String value) {
-        this.memberid = value;
+    public void setlastName(String value) {
+        this.lastName = value;
     }
+
+
 
     /**
      * Gets the value of the city property.
@@ -220,29 +193,29 @@ public class Customer {
     }
 
     /**
-     * Gets the value of the housenumber property.
+     * Gets the value of the street property.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public BigInteger getHousenumber() {
+    public String getHousenumber() {
         return housenumber;
     }
 
     /**
-     * Sets the value of the housenumber property.
+     * Sets the value of the street property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link String }
      *     
      */
-    public void setHousenumber(BigInteger value) {
+    public void setHousenumber(String value) {
         this.housenumber = value;
     }
-
+    
     /**
      * Gets the value of the postcode property.
      * 

@@ -1,4 +1,3 @@
-
 <!--  Our one element xml document, describing one instance of a Library object -->
 
 <mylibrary>      <!-- the one Hotel Reception conatining alle the info -->
@@ -8,50 +7,41 @@
 	<street>Thomas Street, London, United Kingdom</street>
 	<housenumber>1 St</housenumber>
 	<postcode>SE1 9QU</postcode>
-	<tel>T:(44 20) 7234 8000</tel>	
+	<tel>T:(44 20) 7234 8000</tel>
+
 	
-	<Room>                                       <!-- An Instance of a book -->
-		<autor>Dostoyjewski</autor>              <!-- And its attributes -->
+		<!-- An Instance of a book -->
+	
+	<Room>                                      
 		<title>Single</title>
-		<isbn>12345Sn</isbn>
 		<location>Single Rooms are available at Floor 10 to 19</location>
 		<isBooked>001</isBooked>
 	</Room>
 	<Room>
-		<autor>Herbert George Wells</autor>
 		<title>Double</title>
-		<isbn>12345Sn4567</isbn>
 		<location>Double Rooms are available at Floor 20 to 29</location>
 		<isBooked>null</isBooked>
 	</Room>
 	<Room>
-		<autor>Herbert George Wells</autor>
 		<title>Twin</title>
-		<isbn>375954Fe4599</isbn>
 		<location>Twin Rooms are available at Floor 30 to 39</location>
 		<isBooked>null</isBooked>
 	</Room>
-	<Room>                                       <!-- An Instance of a book -->
-		<autor>Dostoyjewski</autor>              <!-- And its attributes -->
+	<Room>
 		<title>Triple</title>
-		<isbn>12345Sn</isbn>
 		<location>Triple Rooms are available at Floor 40 to 49</location>
 		<isBooked>001</isBooked>
 	</Room>
 	<Room>
-		<autor>Herbert George Wells</autor>
 		<title>Quads</title>
-		<isbn>12345Sn4567</isbn>
 		<location>Quad Rooms are available at Floor 50 to 59</location>
 		<isBooked>null</isBooked>
 	</Room>
 	<Room>>
-		<autor>Herbert George Wells</autor>
 		<title>Suites</title>
-		<isbn>375954Fe4599</isbn>
 		<location>Suites are available at Floor 60, 61, 62, 63, 64, 65</location>
 		<isBooked>001</isBooked>
-	</Room>>
+	</Room>
 	
 	<Member>
 		<surname>James</surname>
@@ -128,4 +118,5 @@
 		<enddate>22102011</enddate>	
 	</Lending>
 
-</mylibrary>     <!-- closing the one libraryobject conatining alle the info -->
+</mylibrary>     
+<!-- closing the one libraryobject conatining alle the info -->

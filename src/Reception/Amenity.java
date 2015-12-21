@@ -27,7 +27,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="books" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +40,6 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "url",
     "location",
-    "books"
 })
 public class Amenity {
 
@@ -51,8 +49,6 @@ public class Amenity {
     protected String url;
     @XmlElement(required = true)
     protected String location;
-    @XmlElement(required = true)
-    protected String books;
 
     /**
      * Gets the value of the name property.
@@ -126,28 +122,5 @@ public class Amenity {
         this.location = value;
     }
 
-    /**
-     * Gets the value of the books property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBooks() {
-        return books;
-    }
-
-    /**
-     * Sets the value of the books property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBooks(String value) {
-        this.books = value;
-    }
 
 }

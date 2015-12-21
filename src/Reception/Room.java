@@ -24,9 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="autor" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="isBooked" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -39,48 +37,20 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Room", propOrder = {
-    "autor",
     "title",
-    "isbn",
     "location",
     "isBooked"
 })
 public class Room {
 
     @XmlElement(required = true)
-    protected String autor;
-    @XmlElement(required = true)
     protected String title;
-    @XmlElement(required = true)
-    protected String isbn;
     @XmlElement(required = true)
     protected String location;
     @XmlElement(required = true)
     protected String isBooked;
 
-    /**
-     * Gets the value of the autor property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAutor() {
-        return autor;
-    }
 
-    /**
-     * Sets the value of the autor property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAutor(String value) {
-        this.autor = value;
-    }
 
     /**
      * Gets the value of the title property.
@@ -106,29 +76,6 @@ public class Room {
         this.title = value;
     }
 
-    /**
-     * Gets the value of the isbn property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getIsbn() {
-        return isbn;
-    }
-
-    /**
-     * Sets the value of the isbn property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIsbn(String value) {
-        this.isbn = value;
-    }
 
     /**
      * Gets the value of the location property.

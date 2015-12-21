@@ -77,8 +77,7 @@ public class Reasoner {
 															// of our parser
 
 		// This is a candidate for a name change
-		File xmlfiletoload = new File("Library.xml"); // we need a (CURRENT)
-														// file (xml) to load
+		File xmlfiletoload = new File("Library.xml"); // loeads XML file
 
 		// Init synonmys and typo forms in gazetteers
 
@@ -526,28 +525,7 @@ public class Reasoner {
 				curbook = (Room) thelist.get(i); // This is a candidate for a
 													// name change
 
-				if (input.contains(curbook.getTitle().toLowerCase()) // This is
-																		// a
-																		// candidate
-																		// for a
-																		// name
-																		// change
-						|| input.contains(curbook.getIsbn().toLowerCase()) // This
-																			// is
-																			// a
-																			// candidate
-																			// for
-																			// a
-																			// name
-																			// change
-						|| input.contains(curbook.getAutor().toLowerCase())) { // This
-																				// is
-																				// a
-																				// candidate
-																				// for
-																				// a
-																				// name
-																				// change
+				if (input.contains(curbook.getTitle().toLowerCase())) { 
 
 					counter = i;
 
@@ -563,14 +541,14 @@ public class Reasoner {
 						input = input.replace(curbook.getTitle().toLowerCase(),
 								"<b>" + curbook.getTitle().toLowerCase() + "</b>");
 					}
-					if (input.contains(curbook.getIsbn().toLowerCase())) {
-						input = input.replace(curbook.getIsbn().toLowerCase(),
-								"<b>" + curbook.getIsbn().toLowerCase() + "</b>");
-					}
-					if (input.contains(curbook.getAutor().toLowerCase())) {
-						input = input.replace(curbook.getAutor().toLowerCase(),
-								"<b>" + curbook.getAutor().toLowerCase() + "</b>");
-					}
+					//if (input.contains(curbook.getIsbn().toLowerCase())) {
+					//	input = input.replace(curbook.getIsbn().toLowerCase(),
+					//			"<b>" + curbook.getIsbn().toLowerCase() + "</b>");
+					//}
+					//if (input.contains(curbook.getAutor().toLowerCase())) {
+					//	input = input.replace(curbook.getAutor().toLowerCase(),
+					//			"<b>" + curbook.getAutor().toLowerCase() + "</b>");
+					//}
 
 					i = thelist.size() + 1; // force break
 				}
@@ -605,18 +583,9 @@ public class Reasoner {
 			// If there is a lending with the books ISBN, the book is not
 			// available
 
-			if (curbook.getIsbn().toLowerCase().equals(curlend.getIsbn().toLowerCase())) { // This
-																							// is
-																							// a
-																							// candidate
-																							// for
-																							// a
-																							// name
-																							// change
-
-				input = input.replace(curlend.getIsbn().toLowerCase(),
-						"<b>" + curlend.getIsbn().toLowerCase() + "</b>");
-
+			if (curbook.getisBooked().toLowerCase().equals(curlend.getbookingID().toLowerCase())) { 
+				input = input.replace(curlend.getbookingID().toLowerCase(),
+						"<b>" + curlend.getbookingID().toLowerCase() + "</b>");
 				available = false;
 				i = thelist.size() + 1; // force break
 			}
@@ -690,7 +659,7 @@ public class Reasoner {
 																// a name change
 				listemall = listemall + "<li>" // This is a candidate for a name
 												// change
-						+ (curmem.getSurname() + " " + curmem.getLastname() + "</li>"); // This
+						+ (curmem.getfirsName() + " " + curmem.getlastName() + "</li>"); // This
 																						// is
 																						// a
 																						// candidate
@@ -724,7 +693,7 @@ public class Reasoner {
 				Booking curlend = (Booking) thelist.get(i); // This is a
 															// candidate for a
 															// name change
-				listemall = listemall + "<li>" + (curlend.getIsbn() + "</li>"); // This
+				listemall = listemall + "<li>" + (curlend.getbookingID() + "</li>"); // This
 																				// is
 																				// a
 																				// candidate
@@ -769,28 +738,10 @@ public class Reasoner {
 				Room curbook = (Room) thelist.get(i); // This is a candidate for
 														// a name change
 
-				if (input.contains(curbook.getTitle().toLowerCase()) // This is
-																		// a
-																		// candidate
-																		// for a
-																		// name
-																		// change
-						|| input.contains(curbook.getIsbn().toLowerCase()) // This
-																			// is
-																			// a
-																			// candidate
-																			// for
-																			// a
-																			// name
-																			// change
-						|| input.contains(curbook.getAutor().toLowerCase())) { // This
-																				// is
-																				// a
-																				// candidate
-																				// for
-																				// a
-																				// name
-																				// change
+				if (input.contains(curbook.getTitle().toLowerCase()))
+						//|| input.contains(curbook.getIsbn().toLowerCase())
+						//|| input.contains(curbook.getAutor().toLowerCase())) 
+						{
 
 					counter = i;
 					yesorno.set(0, "Requested Room is Available."); // This is a
@@ -810,13 +761,13 @@ public class Reasoner {
 				Customer curmem = (Customer) thelist.get(i); // This is a
 																// candidate for
 																// a name change
-				if (input.contains(curmem.getSurname().toLowerCase()) // This is
+				if (input.contains(curmem.getfirsName().toLowerCase()) // This is
 																		// a
 																		// candidate
 																		// for a
 																		// name
 																		// change
-						|| input.contains(curmem.getLastname().toLowerCase()) // This
+						|| input.contains(curmem.getlastName().toLowerCase()) // This
 																				// is
 																				// a
 																				// candidate
@@ -882,12 +833,12 @@ public class Reasoner {
 				Booking curlend = (Booking) thelist.get(i); // This is a
 															// candidate for a
 															// name change
-				if (input.contains(curlend.getIsbn().toLowerCase()) // This is a
+				if (input.contains(curlend.getbookingID().toLowerCase()) // This is a
 																	// candidate
 																	// for a
 																	// name
 																	// change
-						|| input.contains(curlend.getMemberid().toLowerCase())) { // This
+						|| input.contains(curlend.getcustomerID().toLowerCase())) { // This
 																					// is
 																					// a
 																					// candidate
@@ -936,86 +887,26 @@ public class Reasoner {
 
 		if (thelist == theRecentThing && theRecentThing.get(0) != null) {
 
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("room")) { // This
-																									// is
-																									// a
-																									// candidate
-																									// for
-																									// a
-																									// name
-																									// change
-
-				Room curbook = (Room) theRecentThing.get(0); // This is a
-																// candidate for
-																// a name change
-				location = (curbook.getLocation() + " "); // This is a candidate
-															// for a name change
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("room")) { 
+				Room curbook = (Room) theRecentThing.get(0); 
+				location = (curbook.getLocation() + " "); 
 
 			}
 
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("member")) { // This
-																									// is
-																									// a
-																									// candidate
-																									// for
-																									// a
-																									// name
-																									// change
-
-				Customer curmem = (Customer) theRecentThing.get(0); // This is a
-																	// candidate
-																	// for a
-																	// name
-																	// change
-				location = (curmem.getCity() + " " + curmem.getStreet() + " " + curmem // This
-																						// is
-																						// a
-																						// candidate
-																						// for
-																						// a
-																						// name
-																						// change
-						.getHousenumber()); // This is a candidate for a name
-											// change
-
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("member")) {
+				Customer curmem = (Customer) theRecentThing.get(0); 
+				location = (curmem.getCity() + " " + curmem.getStreet() + " " + curmem.getHousenumber()); 
 			}
 
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("catalog")) { // This
-																									// is
-																									// a
-																									// candidate
-																									// for
-																									// a
-																									// name
-																									// change
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("catalog")) 
+				{
+					Amenity curcat = (Amenity) theRecentThing.get(0);
+					location = (curcat.getLocation() + " ");
+				}
 
-				Amenity curcat = (Amenity) theRecentThing.get(0); // This is a
-																	// candidate
-																	// for a
-																	// name
-																	// change
-				location = (curcat.getLocation() + " "); // This is a candidate
-															// for a name change
-
-			}
-
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("library")) { // This
-																									// is
-																									// a
-																									// candidate
-																									// for
-																									// a
-																									// name
-																									// change
-
-				location = (reception.getCity() + " " + reception.getStreet() + reception // This
-																							// is
-																							// a
-																							// candidate
-																							// for
-																							// a
-																							// name
-																							// change
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("library")) { 
+			
+				location = (reception.getCity() + " " + reception.getStreet() + reception
 						.getHousenumber()); // This is a candidate for a name
 											// change
 			}
@@ -1036,30 +927,9 @@ public class Reasoner {
 					Room curbook = (Room) thelist.get(i); // This is a candidate
 															// for a name change
 
-					if (input.contains(curbook.getTitle().toLowerCase()) // This
-																			// is
-																			// a
-																			// candidate
-																			// for
-																			// a
-																			// name
-																			// change
-							|| input.contains(curbook.getIsbn().toLowerCase()) // This
-																				// is
-																				// a
-																				// candidate
-																				// for
-																				// a
-																				// name
-																				// change
-							|| input.contains(curbook.getAutor().toLowerCase())) { // This
-																					// is
-																					// a
-																					// candidate
-																					// for
-																					// a
-																					// name
-																					// change
+					if (input.contains(curbook.getTitle().toLowerCase()))
+							//|| input.contains(curbook.getIsbn().toLowerCase())
+							//|| input.contains(curbook.getAutor().toLowerCase())) {
 
 						counter = i;
 						location = (curbook.getLocation() + " ");
@@ -1081,36 +951,11 @@ public class Reasoner {
 
 				for (int i = 0; i < thelist.size(); i++) {
 
-					Customer curmember = (Customer) thelist.get(i); // This is a
-																	// candidate
-																	// for a
-																	// name
-																	// change
+					Customer curmember = (Customer) thelist.get(i);
 
-					if (input.contains(curmember.getSurname().toLowerCase()) // This
-																				// is
-																				// a
-																				// candidate
-																				// for
-																				// a
-																				// name
-																				// change
-							|| input.contains(curmember.getLastname().toLowerCase()) // This
-																						// is
-																						// a
-																						// candidate
-																						// for
-																						// a
-																						// name
-																						// change
-							|| input.contains(curmember.getMemberid().toLowerCase())) { // This
-																						// is
-																						// a
-																						// candidate
-																						// for
-																						// a
-																						// name
-																						// change
+					if (input.contains(curmember.getfirsName().toLowerCase())
+							|| input.contains(curmember.getlastName().toLowerCase())
+							|| input.contains(curmember.getcustomerID().toLowerCase())) { 
 
 						counter = i;
 						location = (curmember.getCity() + " ");
@@ -1132,29 +977,10 @@ public class Reasoner {
 
 				for (int i = 0; i < thelist.size(); i++) {
 
-					Amenity curcatalog = (Amenity) thelist.get(i); // This is a
-																	// candidate
-																	// for a
-																	// name
-																	// change
+					Amenity curcatalog = (Amenity) thelist.get(i);
 
-					if (input.contains(curcatalog.getName().toLowerCase()) // This
-																			// is
-																			// a
-																			// candidate
-																			// for
-																			// a
-																			// name
-																			// change
-							|| input.contains(curcatalog.getUrl().toLowerCase())) { // This
-																					// is
-																					// a
-																					// candidate
-																					// for
-																					// a
-																					// name
-																					// change
-
+					if (input.contains(curcatalog.getName().toLowerCase())
+							|| input.contains(curcatalog.getUrl().toLowerCase())) { 
 						counter = i;
 						location = (curcatalog.getLocation() + " ");
 						Currentindex = counter;
@@ -1168,21 +994,11 @@ public class Reasoner {
 				}
 			}
 
-			if (thelist == receptionList) { // This is a candidate for a name
-											// change
-
-				location = (reception.getCity() + " " + reception.getStreet() + reception // This
-																							// is
-																							// a
-																							// candidate
-																							// for
-																							// a
-																							// name
-																							// change
-						.getHousenumber()); // This is a candidate for a name
-											// change
+			if (thelist == receptionList) {
+				location = (reception.getCity() + " " + reception.getStreet() + reception
+						.getHousenumber());
 			}
-		}
+		
 
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
@@ -1196,57 +1012,25 @@ public class Reasoner {
 		return location;
 	}
 
-	public String testit() { // test the loaded knowledge by querying for books
-								// written by dostoyjewski
+	public String testit() { // Test The Number of Rooms
 
 		String answer = "";
-
-		System.out.println("room List = " + theRoomList.size()); // This is a
-																	// candidate
-																	// for a
-																	// name
-																	// change
-
-		for (int i = 0; i < theRoomList.size(); i++) { // check each book in the
-														// List, //This is a
-														// candidate for a name
-														// change
+		System.out.println("room List = " + theRoomList.size());
+		for (int i = 0; i < theRoomList.size(); i++) { //check the rooms in the list
 
 			Room curbook = (Room) theRoomList.get(i); // cast list element to
 														// Book Class //This is
 														// a candidate for a
 														// name change
-			System.out.println("Testing Book" + curbook.getAutor());
+			
+			
+			//System.out.println("Testing Book" + curbook.getAutor());
 
-			if (curbook.getAutor().equalsIgnoreCase("dostoyjewski")) { // check
-																		// for
-																		// the
-																		// author
-																		// //This
-																		// is a
-																		// candidate
-																		// for a
-																		// name
-																		// change
-
-				answer = "A book written by " + curbook.getAutor() + "\n" // This
-																			// is
-																			// a
-																			// candidate
-																			// for
-																			// a
-																			// name
-																			// change
-						+ " is for example the classic " + curbook.getTitle() // This
-																				// is
-																				// a
-																				// candidate
-																				// for
-																				// a
-																				// name
-																				// change
-						+ ".";
-			}
+			//if (curbook.getAutor().equalsIgnoreCase("dostoyjewski")) { 
+			//	answer = "A book written by " + curbook.getAutor() + "\n" 
+			//			+ " is for example the classic " + curbook.getTitle()
+			//			+ ".";
+			//}
 		}
 		return answer;
 	}

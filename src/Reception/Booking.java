@@ -23,11 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="lendid" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="memberid" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="startdate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="enddate" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="bookingID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="customerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,143 +37,116 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Booking", propOrder = {
-    "lendid",
-    "memberid",
-    "isbn",
-    "startdate",
-    "enddate"
+    "bookingID",
+    "customerID",
+    "startDate",
+    "endDate"
 })
 public class Booking {
 
     @XmlElement(required = true)
-    protected String lendid;
+    protected String bookingID;
     @XmlElement(required = true)
-    protected String memberid;
+    protected String customerID;
     @XmlElement(required = true)
-    protected String isbn;
+    protected String startDate;
     @XmlElement(required = true)
-    protected String startdate;
-    @XmlElement(required = true)
-    protected String enddate;
+    protected String endDate;
 
     /**
-     * Gets the value of the lendid property.
+     * Gets the value of the bookingID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLendid() {
-        return lendid;
+    public String getbookingID() {
+        return bookingID;
     }
 
     /**
-     * Sets the value of the lendid property.
+     * Sets the value of the bookingID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLendid(String value) {
-        this.lendid = value;
+    public void setbookingID(String value) {
+        this.bookingID = value;
     }
 
     /**
-     * Gets the value of the memberid property.
+     * Gets the value of the customerID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMemberid() {
-        return memberid;
+    public String getcustomerID() {
+        return customerID;
     }
 
     /**
-     * Sets the value of the memberid property.
+     * Sets the value of the customerID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMemberid(String value) {
-        this.memberid = value;
+    public void setcustomerID(String value) {
+        this.customerID = value;
     }
 
     /**
-     * Gets the value of the isbn property.
+     * Gets the value of the startDate property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIsbn() {
-        return isbn;
+    public String getstartDate() {
+        return startDate;
     }
 
     /**
-     * Sets the value of the isbn property.
+     * Sets the value of the startDate property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIsbn(String value) {
-        this.isbn = value;
+    public void setstartDate(String value) {
+        this.startDate = value;
     }
 
     /**
-     * Gets the value of the startdate property.
+     * Gets the value of the endDate property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getStartdate() {
-        return startdate;
+    public String getendDate() {
+        return endDate;
     }
 
     /**
-     * Sets the value of the startdate property.
+     * Sets the value of the endDate property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setStartdate(String value) {
-        this.startdate = value;
-    }
-
-    /**
-     * Gets the value of the enddate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEnddate() {
-        return enddate;
-    }
-
-    /**
-     * Sets the value of the enddate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEnddate(String value) {
-        this.enddate = value;
+    public void setendDate(String value) {
+        this.endDate = value;
     }
 
 }
