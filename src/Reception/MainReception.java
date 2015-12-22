@@ -73,9 +73,9 @@ public class MainReception {
 		
 		try {
 			// Setting GUI Background Image
-    		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("BG.jpg")))));
+    		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources\\BG.jpg")))));
     		// Setting GUI Window Icon 
-    		Main.setIconImage(ImageIO.read(new File("Icon.png")));
+    		Main.setIconImage(ImageIO.read(new File("Resources\\Icon.png")));
 
     	} catch (IOException e) {
     		e.printStackTrace();
