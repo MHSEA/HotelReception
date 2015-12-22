@@ -84,30 +84,31 @@ public class Reasoner {
 			
 			
 			// Add synonyms for Room - Start
-			RoomSyn.add("Room");
-			RoomSyn.add("Single"); 
-			RoomSyn.add("Double");
-			RoomSyn.add("Twin");
-			RoomSyn.add("Triple");
-			RoomSyn.add("Quads");
-			RoomSyn.add("Suites");
+			RoomSyn.add("room");
+			RoomSyn.add("single"); 
+			RoomSyn.add("double");
+			RoomSyn.add("twin");
+			RoomSyn.add("triple");
+			RoomSyn.add("quad");
+			RoomSyn.add("suite");
+			RoomSyn.add("for 3 people");
+			
 			// Add synonyms for Room - End
 
 			
 			// Add synonyms for Customer - Start		
-			CustomerSyn.add("Amenity");
-			CustomerSyn.add("services");
 			CustomerSyn.add("service");
 			CustomerSyn.add("dining");
-			CustomerSyn.add("pool");
 			CustomerSyn.add("excersise");
 			// Add synonyms for Customer - End
 			
 			
 			// Add synonyms for Amenity - Start
+			AmenitySyn.add("amenity");
+			AmenitySyn.add("services");
+			AmenitySyn.add("service");
 			AmenitySyn.add("pool");
 			AmenitySyn.add("disco");
-			AmenitySyn.add("inventor");
 			// Add synonyms for Amenity - End
 			
 		
@@ -268,7 +269,7 @@ public class Reasoner {
 		
 		// Commands - [Help] - Start
 		String questionmark = "?";
-		if (input.contains("Help") 
+		if (input.contains("help")
 				|| input.equalsIgnoreCase(questionmark)) 
 		{
 			questiontype = "Help";
@@ -381,9 +382,8 @@ public class Reasoner {
 		
 		// Response - [List of Rooms] - Start
 		if (questiontype == "list") {
-			answer = ("You asked for the listing of all " + classtype.get(0).getClass().getSimpleName() + "s. <br>"
-					+ "We have the following " + classtype.get(0).getClass().getSimpleName() + "s:"
-					+ ListAll(classtype));
+			answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" 
+					+ ListAll(classtype);
 			Answered = 1;
 		}
 		// Response - [List of Rooms] - End
@@ -412,8 +412,8 @@ public class Reasoner {
 		
 		// Location Question - [Start]
 		if (questiontype == "location") { 
-			answer = ("You can find the " + classtype.get(0).getClass().getSimpleName() + " " + "at "
-					+ Location(classtype, input));
+			//answer = ("You can find the " + classtype.get(0).getClass().getSimpleName() + " " + "at " + Location(classtype, input));
+			answer = (Location(classtype, input));
 			Answered = 1;
 		}
 		if ((questiontype == "intent" && classtype == theRoomList)
@@ -533,7 +533,8 @@ public class Reasoner {
 			}
 		}
 
-		// check all lendings if they contain the books ISBN
+		
+		// Check if the room is booked or not - Start
 		for (int i = 0; i < theBookingList.size(); i++) {
 			Booking curlend = (Booking) theBookingList.get(i);
 			if (curbook.getisBooked().toLowerCase().equals(curlend.getbookingID().toLowerCase())) { 
@@ -543,16 +544,19 @@ public class Reasoner {
 				i = thelist.size() + 1; // force break
 			}
 		}
-
-		if (available) {
+		if (available) 
+		{
 			answer = "There are rooms available to book";
 		} else {
-			answer = "Sorry that type of rooms are fully booked";
+			answer = "Sorry, Mentioned room type is fully booked.";
 		}
-
-		URL = "http:// wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
+		// Check if the room is booked or not - End
+		
+		
+		
+		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "http:// en.wikipedia.org/wiki/" + roometype;
+		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		System.out.println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
@@ -571,8 +575,8 @@ public class Reasoner {
 
 		// URL = "http:// moafaq.com/HotelRec/room.html";
 		// URL2 = "http:// moafaq.com/HotelRec/room.html";
-		URL = "http:// osm.org/go/euu4KvUh--?relation=65606";
-		URL2 = "http:// osm.org/go/euu4KvUh--?relation=65606";
+		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=";
+		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 
 		System.out.println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
@@ -617,9 +621,9 @@ public class Reasoner {
 		}
 		listemall += "</ul>";
 
-		URL = "http:// wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
+		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "http:// en.wikipedia.org/wiki/" + classtype.get(0).getClass().getSimpleName().toLowerCase();
+		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		System.out.println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
@@ -639,7 +643,7 @@ public class Reasoner {
 			yesorno.add("Sorry I didn't understand that." + "<br> "
 					+ "You can type [ Help ] for more information and list of commands.");
 		} else {
-			yesorno.add("No we don't have such a " + classtype.get(0).getClass().getSimpleName());
+			yesorno.add("Requested Room is not available. " + classtype.get(0).getClass().getSimpleName());
 		}
 
 		Integer counter = 0;
@@ -662,7 +666,7 @@ public class Reasoner {
 						|| input.contains(curmem.getlastName().toLowerCase())
 						|| input.contains(curmem.getCity().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we do have such a Amenitiy");
+					yesorno.set(0, "Yes we do have such a Customer");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -674,7 +678,7 @@ public class Reasoner {
 				if (input.contains(curcat.getName().toLowerCase())
 						|| input.contains(curcat.getUrl().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we have such a room");
+					yesorno.set(0, "Yes we have such a Amenity");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -686,7 +690,7 @@ public class Reasoner {
 				if (input.contains(curlend.getbookingID().toLowerCase())
 						|| input.contains(curlend.getcustomerID().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we have such a Lending");
+					yesorno.set(0, "Yes we have such a Booking");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -695,9 +699,9 @@ public class Reasoner {
 		if (classtype.isEmpty()) {
 			System.out.println("Not class type given.");
 		} else {
-			URL = "http:// wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
+			URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 					+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-			URL2 = "http:// en.wikipedia.org/wiki/" + classtype.get(0).getClass().getSimpleName().toLowerCase();
+			URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 			System.out.println("URL = " + URL);
 			tooltipstring = readwebsite(URL);
 			String html = "<html>" + tooltipstring + "</html>";
@@ -794,9 +798,9 @@ public class Reasoner {
 						.getHousenumber());
 			}
 		
-		URL = "http:// wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
+		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "http:// en.wikipedia.org/wiki/" + classtype.get(0).getClass().getSimpleName().toLowerCase();
+		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		System.out.println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
