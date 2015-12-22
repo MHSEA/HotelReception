@@ -1,122 +1,130 @@
-<!--  Our one element xml document, describing one instance of a Library object -->
+<mylibrary>      
 
-<mylibrary>      <!-- the one Hotel Reception conatining alle the info -->
-
-	<name>Hotel Reception</name>            <!--All attributes of the Hotel Reception object -->
+	<!--All attributes of the Hotel Reception object -->
+	<name>Hotel Reception</name>            
 	<city>London</city>
 	<street>Thomas Street, London, United Kingdom</street>
 	<housenumber>1 St</housenumber>
 	<postcode>SE1 9QU</postcode>
 	<tel>T:(44 20) 7234 8000</tel>
 
-	
-		<!-- An Instance of a book -->
-	
+	<!--All attributes of the Room object - Start-->
 	<Room>                                      
 		<title>Single</title>
 		<location>Single Rooms are available at Floor 10 to 19</location>
 		<isBooked>001</isBooked>
 	</Room>
+	
 	<Room>
 		<title>Double</title>
 		<location>Double Rooms are available at Floor 20 to 29</location>
 		<isBooked>null</isBooked>
 	</Room>
+	
 	<Room>
 		<title>Twin</title>
 		<location>Twin Rooms are available at Floor 30 to 39</location>
 		<isBooked>null</isBooked>
 	</Room>
+	
 	<Room>
 		<title>Triple</title>
 		<location>Triple Rooms are available at Floor 40 to 49</location>
 		<isBooked>001</isBooked>
 	</Room>
+	
 	<Room>
-		<title>Quads</title>
+		<title>Quad</title>
 		<location>Quad Rooms are available at Floor 50 to 59</location>
-		<isBooked>null</isBooked>
-	</Room>
-	<Room>>
-		<title>Suites</title>
-		<location>Suites are available at Floor 60, 61, 62, 63, 64, 65</location>
 		<isBooked>001</isBooked>
 	</Room>
 	
-	<Member>
-		<surname>James</surname>
-		<lastname>Average</lastname>
-		<age>25</age>
-		<memberid>J_AV_25</memberid>
-		
+	<Room>
+		<title>Suite</title>
+		<location>Suites are available at Floor 60, 61, 62, 63, 64, 65</location>
+		<isBooked>001</isBooked>
+	</Room>
+	<!--All attributes of the Room object - End-->
+	
+	
+	
+	<!--All attributes of the Customer object - Start-->
+	<Customer>
+		<customerID>S_SO_60</customerID>
+		<firsName>James</firsName>
+		<lastName>Average</lastName>
 		<city>London</city>
 		<street>Bond Street</street>
 		<housenumber>14</housenumber>
 		<postcode>L 7</postcode>	
-	  
 	    <hasbooked>null</hasbooked>
-	</Member>
-	<Member>
-		<surname>Susan</surname>
-		<lastname>Someone</lastname>
+	</Customer>
+	
+	<Customer>
+		<customerID>S_SO_61</customerID>
+		<firsName>Susan</firsName>
+		<lastName>Someone</lastName>
 		<age>68</age>
-		<memberid>S_SO_68</memberid>
-		
 		<city>Ealing</city>
 		<street>Cairn Road</street>
 		<housenumber>17</housenumber>
 		<postcode>W 14</postcode>	
-	    
 	    <hasbooked>001</hasbooked>
-	</Member>
-	<Member>
-		<surname>Tim</surname>
-		<lastname>Buktu</lastname>
-		<age>18</age>
-		<memberid>T_BU_99</memberid>
-		
+	</Customer>
+	
+	<Customer>
+		<customerID>S_SO_62</customerID>
+		<firsName>Tim</firsName>
+		<lastName>Buktu</lastName>
 		<city>Ealing</city>
 		<street>Uxbridge Road</street>
 		<housenumber>111</housenumber>
 		<postcode>W 22</postcode>	
-	    
 	    <hasbooked>55</hasbooked>
-	</Member>
+	</Customer>
+	<!--All attributes of the Customer object - End-->
 	
+	
+	
+	<!--All attributes of the Amenity object - Start-->
 	<Amenity>
 		<name>pool</name>
 		<url>www.somwhere.uk/scifi</url>
 		<location>Roof Top - floor 67</location>
-		<Books>12345Sn4567#375954Fe4567#</Books>
 	</Amenity>
+	
 	<Amenity>
 		<name>disco</name>
 		<url>www.somwhere.uk/boring</url>
 		<location>Basement - B1</location>
-		<Books>12345Sn#</Books>
 	</Amenity>
+	<!--All attributes of the Amenity object - End-->
 	
-	<Lending>
-		<lendid>001</lendid>
-		<memberid>S_SO_68</memberid>
-		<isbn>12345Sn</isbn>
+	
+	
+	<!--All attributes of the Booking object - Start-->
+	<Booking>
+		<bookingID>001</bookingID>
+		<customerID>S_SO_60</customerID>
 		<startdate>01102011</startdate>
 		<enddate>22102011</enddate>	
-	</Lending>
-	<Lending>
-		<lendid>002</lendid>
-		<memberid>S_SO_68</memberid>
-		<isbn>12345XZ</isbn>
+	</Booking>
+	
+	<Booking>
+		<bookingID>002</bookingID>
+		<customerID>S_SO_61</customerID>
 		<startdate>01102011</startdate>
 		<enddate>22102011</enddate>	
-	</Lending>
-	<Lending>
-		<lendid>003</lendid>
-		<memberid>S_SO_68</memberid>
-		<isbn>0372</isbn>
+	</Booking>
+	
+	<Booking>
+		<bookingID>003</bookingID>
+		<customerID>S_SO_62</customerID>
 		<startdate>01102011</startdate>
 		<enddate>22102011</enddate>	
-	</Lending>
-
-</mylibrary>     
-<!-- closing the one libraryobject conatining alle the info -->
+	</Booking>
+	<!--All attributes of the Booking object - End-->
+	
+	
+	
+</mylibrary>
