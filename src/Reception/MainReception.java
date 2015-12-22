@@ -34,7 +34,6 @@ public class MainReception {
 		Inputlabel = new JLabel("Question");
 		Input.setBorder(null);
 		//Input.setOpaque(false);
-		//Reasoner.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(HR.ico)));
 		
 		
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
@@ -73,9 +72,11 @@ public class MainReception {
 		JFrame Main = new JFrame("Hotel Reception");   // our main frame
 		
 		try {
-			
+			// Setting GUI Background Image
     		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("BG.jpg")))));
-    		
+    		// Setting GUI Window Icon 
+    		Main.setIconImage(ImageIO.read(new File("Icon.png")));
+
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
