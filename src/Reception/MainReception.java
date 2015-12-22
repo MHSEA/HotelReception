@@ -23,9 +23,9 @@ public class MainReception {
 	String question = "";
 	String answer = "";
 	Reasoner myReasoner;
-
+	
 	public MainReception() {               // Constructor for an Instance of SimpleGUI
-
+		
 		myReasoner = new Reasoner(this);         // Instantiate a "brain", reference this GUI to it
 										                      		
 		myReasoner.initknowledge();              // fill "the brain" with knowledge
@@ -34,6 +34,7 @@ public class MainReception {
 		Inputlabel = new JLabel("Question");
 		Input.setBorder(null);
 		//Input.setOpaque(false);
+		//Reasoner.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(HR.ico)));
 		
 		
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
@@ -166,10 +167,8 @@ public class MainReception {
 
 	}
 
-	public static void main(String[] args) {                 // main Method (starts when
-												             // class/instance is called)
+	public static void main(String[] args) {                 // main Method (starts when class/instance is called)
 		MainReception mygui = new MainReception();
 		mygui.checkbrain();                                  // check if brain is there and knowledge loaded
-
 	}
 }
