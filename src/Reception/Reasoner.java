@@ -63,12 +63,12 @@ public class Reasoner {
 	// Constructor - End
 	
 	
-	// Load library database from Library.XML File - Start
+	// Load library database from DataBase.xml File - Start
 	public void initknowledge() 
 		{
 			JAXB_XMLParser xmlhandler = new JAXB_XMLParser();
 			// Loading XML file
-			File xmlfiletoload = new File("Library.xml"); 
+			File xmlfiletoload = new File("DataBase.xml"); 
 
 		// Synonyms - Start
 			
@@ -150,7 +150,7 @@ public class Reasoner {
 				System.out.println("error in init");
 			}
 	}
-	// Load library database from Library.XML File - End
+	// Load library database from DataBase.xml File - End
 	
 	
 	
