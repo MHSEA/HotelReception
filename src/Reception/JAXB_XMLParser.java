@@ -61,7 +61,3 @@ public class JAXB_XMLParser {
 		return null;
 	}
 }
-
-
-//Salam Amooyi
-//Salam Javoonak
