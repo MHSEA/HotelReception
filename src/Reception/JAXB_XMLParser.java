@@ -1,29 +1,13 @@
 package Reception;
 
-// Note: The xsd schema viewer (in Eclipse) might report errors if you try to view your schemas with an 
-// active internet connection, if so: view (and edit) your xml schemas offline please 
-
-// This class uses the JAXB library to automatically read a xml file and 
-// generate objects containing this data from pre-compiled classes
-
-// Remember to generate the classes first from your xml schema and import them into your project which  
-// might require a 'refresh' of your project directory (context menu > refresh)
-
-// Generate the classes automatically with: Opening a command console and type:
-// Path to YOUR-PROJECTROOT-IN-WORKSPACE\xjc.bat yourschemaname.xsd -d src -p yourclasspackagename
-
-
 import java.io.*;
 import javax.xml.bind.*;
-
 import Reception.Hotel;
 
 public class JAXB_XMLParser {
 
 	private JAXBContext jaxbContext = null;     // generate a context to work in with JAXB											   
-	private Unmarshaller unmarshaller = null;   // unmarshall = genrate objects from an xml file												
-	
-	// This is a candidate for a name change because you wont deal with a library any more in your conversion
+	private Unmarshaller unmarshaller = null;   // unmarshall = genrate objects from an xml file
 	private Hotel mynewlib = null;            // the main object containing all data
 
 	public JAXB_XMLParser() {
@@ -51,7 +35,7 @@ public class JAXB_XMLParser {
 				// The above (Library) is a candidate for a name change because you wont deal with 
 				// a library any more in your conversion
 				
-				return mynewlib; // return Library Objekt
+				return mynewlib; // return Library Object
 			}
 		} // try
 
