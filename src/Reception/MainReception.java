@@ -70,7 +70,7 @@ public class MainReception {
 		Outframe.add(ScrollInfo);		
 
 		JFrame Main = new JFrame("Hotel Reception");   // our main frame
-		//jjj
+		
 		try {
 			// Setting GUI Background Image
     		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources\\BG.jpg")))));
