@@ -4,10 +4,7 @@
 // Any modifications to this file will be lost upon recompilation of the source schema. 
 // Generated on: 2015.11.23 at 01:19:01 PM GMT 
 //
-
-
 package Reception;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,15 +34,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Amenity", propOrder = {
     "name",
-    "url",
     "location",
 })
+
 public class Amenity {
 
     @XmlElement(required = true)
     protected String name;
-    @XmlElement(required = true)
-    protected String url;
     @XmlElement(required = true)
     protected String location;
 
@@ -74,30 +69,6 @@ public class Amenity {
     }
 
     /**
-     * Gets the value of the url property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Sets the value of the url property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
-
-    /**
      * Gets the value of the location property.
      * 
      * @return
@@ -120,6 +91,4 @@ public class Amenity {
     public void setLocation(String value) {
         this.location = value;
     }
-
-
 }
