@@ -4,8 +4,6 @@
 // Any modifications to this file will be lost upon recompilation of the source schema. 
 // Generated on: 2015.11.23 at 01:19:01 PM GMT 
 //
-
-
 package Reception;
 
 import javax.xml.bind.JAXBElement;
@@ -31,7 +29,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Mylibrary_QNAME = new QName("", "mylibrary");
+    private final static QName _Mylibrary_QNAME = new QName("", "DataBase");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: Examples
@@ -84,7 +82,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Hotel }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "mylibrary")
+    @XmlElementDecl(namespace = "", name = "DataBase")
     public JAXBElement<Hotel> createMylibrary(Hotel value) {
         return new JAXBElement<Hotel>(_Mylibrary_QNAME, Hotel.class, null, value);
     }
