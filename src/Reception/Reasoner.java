@@ -116,7 +116,7 @@ public class Reasoner {
 			AmenitySyn.add("drink");
 			AmenitySyn.add("club");
 			AmenitySyn.add("dance");
-			AmenitySyn.add("excersise");
+			AmenitySyn.add("exercise");
 			AmenitySyn.add("gym");
 			AmenitySyn.add("running");
 			AmenitySyn.add("spinning");
