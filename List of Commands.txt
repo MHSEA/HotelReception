@@ -1,0 +1,38 @@
+Commands:
+
+Single Commands
+=============================================
+
+hi
+thanks
+bye
+where is the hotel
+How many rooms are available
+Can i book a room
+I am looking for a single room
+I am looking for a double room
+I am looking for a room for two people
+I am looking for a triple room
+I am looking for a quad room
+What kind of rooms are available
+What kind of services are available
+
+
+
+
+Continues Conversations
+=============================================
+
+I am looking for a suite
+where can i find it
+where is it
+
+----------------------------------------------
+I am looking for pool
+where is it
+----------------------------------------------
+
+
+Can i book a room
+
+can i book a single room
