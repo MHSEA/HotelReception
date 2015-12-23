@@ -1,4 +1,4 @@
-<mylibrary>      
+<DataBase>      
 
 	<!--All attributes of the Hotel Reception object -->
 	<name>Hotel Reception</name>            
@@ -248,4 +248,4 @@
 	
 	
 	
-</mylibrary>
+</DataBase>
