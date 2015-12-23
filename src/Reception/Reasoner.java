@@ -801,8 +801,7 @@ public class Reasoner {
 		if (thelist == theAmenityList) {
 			for (int i = 0; i < thelist.size(); i++) {
 				Amenity curcat = (Amenity) thelist.get(i);
-				if (input.contains(curcat.getName().toLowerCase())
-						|| input.contains(curcat.getUrl().toLowerCase())) {
+				if (input.contains(curcat.getName().toLowerCase())) {
 					counter = i;
 					yesorno.set(0, "Yes we have such a Amenity");
 					yesorno.add(counter.toString());
@@ -906,8 +905,7 @@ public class Reasoner {
 				int counter = 0;
 				for (int i = 0; i < thelist.size(); i++) {
 					Amenity curcatalog = (Amenity) thelist.get(i);
-					if (input.contains(curcatalog.getName().toLowerCase())
-							|| input.contains(curcatalog.getUrl().toLowerCase())) { 
+					if (input.contains(curcatalog.getName().toLowerCase())) { 
 						counter = i;
 						location = (curcatalog.getLocation() + " ");
 						Currentindex = counter;
