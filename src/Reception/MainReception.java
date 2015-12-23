@@ -2,17 +2,21 @@ package Reception;
 
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 import java.awt.*;
+import java.awt.Window.Type;
 import java.awt.event.*;
 import javax.imageio.*;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
+import javax.swing.UIManager;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
 
 @SuppressWarnings("unused")
 public class MainReception {
 
 	public JPanel Inframe, Outframe, Buttonframe;
-	public JTextField Input;
+	public static JTextField Input;
 	public static JEditorPane Output,Info;
 	public JLabel Inputlabel;
 	public static JScrollPane Scroll;
@@ -20,8 +24,8 @@ public class MainReception {
 	public String dialogout = "";
 	public static Vector<String> dialoghistory = new Vector<String>();
 	public String displaytext = "";
-	String question = "";
-	String answer = "";
+	public static String question = "";
+	public static String answer = "";
 	Reasoner myReasoner;
 	
 	public MainReception() {               // Constructor for an Instance of SimpleGUI
@@ -49,7 +53,8 @@ public class MainReception {
 		Scroll.setBorder(null);
 		
 		Info = new JEditorPane("text/html","html string");	    
-		Info.setEditable(false);  			
+		Info.setEditable(false);  	
+		Info.setEditorKit(new HTMLEditorKit());
 		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
 		//Info.setOpaque(false);
 		
@@ -72,10 +77,12 @@ public class MainReception {
 		JFrame Main = new JFrame("Hotel Reception");   // our main frame
 		
 		try {
+			
 			// Setting GUI Background Image
     		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources\\BG.jpg")))));
     		// Setting GUI Window Icon 
     		Main.setIconImage(ImageIO.read(new File("Resources\\Icon.png")));
+
 
     	} catch (IOException e) {
     		e.printStackTrace();
