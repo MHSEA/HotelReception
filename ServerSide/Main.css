@@ -1,0 +1,58 @@
+
+body {
+background-color: eeeeee; 
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto 
+}
+	
+p {
+font-family:tahoma; 
+display:block;
+font-size: 1.2em; 
+color:Black; 
+text-align: center;
+display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+hr{
+display: block;
+    margin-left: auto;
+    margin-right: auto 
+}	
+	
+	.stitched {
+	padding: 2px 2px;
+    margin: 20px;
+    background: #511700;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold
+    line-height: 1.3em;
+    border: 2px outset #fff;
+
+    border-top-left-radius: 50px;
+    -moz-border-radius-topleft: 50px;
+    -webkit-border-top-left-radius: 50px;
+	
+	border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    
+    border-bottom-right-radius: 50px;
+    -moz-border-radius-bottomright: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+	
+	border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+   
+    text-shadow: -1px -1px #aa3030;
+    font-weight: normal;
+	
+    box-shadow: 12px 12px 30px #000; 
+    -moz-box-shadow: 12px 12px 30px #000; 
+    -webkit-box-shadow: 12px 12px 30px #000;}
