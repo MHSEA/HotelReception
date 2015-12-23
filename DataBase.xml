@@ -2,85 +2,117 @@
 
 	<!--All attributes of the Hotel Reception object -->
 	<name>Hotel Reception</name>            
-	<city>London</city>
-	<street>Thomas Street, London, United Kingdom</street>
-	<housenumber>1 St</housenumber>
+	<city>London, </city>
+	<street>Thomas Street, United Kingdom, </street>
+	<housenumber>1 St </housenumber>
 	<postcode>SE1 9QU</postcode>
-	<tel>T:(44 20) 7234 8000</tel>
+	<tel>T:+(44) 020 7234 8000</tel>
 
 	<!--All attributes of the Room object - Start-->
 	<Room>                                      
-		<title>Single</title>
-		<location>Single Rooms are available at Floor 10 to 19</location>
+		<type>Single</type>
+		<location>at Floor 10 to 19</location>
 		<isBooked>001</isBooked>
 	</Room>
+	<Room>                                      
+		<type>for one</type>
+		<location>at Floor 10 to 19</location>
+		<isBooked>001</isBooked>
+	</Room>	
 	
 	<Room>
-		<title>Double</title>
-		<location>Double Rooms are available at Floor 20 to 29</location>
+		<type>Double</type>
+		<location>at Floor 20 to 29</location>
+		<isBooked>null</isBooked>
+	</Room>
+	<Room>
+		<type>for two</type>
+		<location>at Floor 20 to 29</location>
+		<isBooked>null</isBooked>
+	</Room>	
+	<Room>
+		<type>Twin</type>
+		<location>at Floor 30 to 39</location>
 		<isBooked>null</isBooked>
 	</Room>
 	
 	<Room>
-		<title>Twin</title>
-		<location>Twin Rooms are available at Floor 30 to 39</location>
+		<type>Triple</type>
+		<location>at Floor 40 to 49</location>
+		<isBooked>002</isBooked>
+	</Room>
+	<Room>
+		<type>for three</type>
+		<location>at Floor 40 to 49</location>
+		<isBooked>002</isBooked>
+	</Room>	
+	<Room>
+		<type>Quad</type>
+		<location>at Floor 50 to 59</location>
 		<isBooked>null</isBooked>
 	</Room>
-	
 	<Room>
-		<title>Triple</title>
-		<location>Triple Rooms are available at Floor 40 to 49</location>
-		<isBooked>001</isBooked>
-	</Room>
-	
+		<type>for four</type>
+		<location>at Floor 40 to 49</location>
+		<isBooked>null</isBooked>
+	</Room>	
 	<Room>
-		<title>Quad</title>
-		<location>Quad Rooms are available at Floor 50 to 59</location>
-		<isBooked>001</isBooked>
+		<type>suite</type>
+		<location>at Floor 60, 61, 62, 63, 64, 65</location>
+		<isBooked>null</isBooked>
 	</Room>
-	
 	<Room>
-		<title>Suite</title>
-		<location>Suites are available at Floor 60, 61, 62, 63, 64, 65</location>
-		<isBooked>001</isBooked>
-	</Room>
+		<type>big family</type>
+		<location>at Floor 60, 61, 62, 63, 64, 65</location>
+		<isBooked>null</isBooked>
+	</Room>	
 	<!--All attributes of the Room object - End-->
 	
 	
 	
 	<!--All attributes of the Customer object - Start-->
 	<Customer>
-		<customerID>S_SO_60</customerID>
-		<firsName>James</firsName>
-		<lastName>Average</lastName>
-		<city>London</city>
-		<street>Bond Street</street>
-		<housenumber>14</housenumber>
-		<postcode>L 7</postcode>	
+		<customerID>Cust_1</customerID>
+		<firsName>Mehdi</firsName>
+		<lastName>Amerinia</lastName>
+		<city>Germany</city>
+		<street>Dutch Street</street>
+		<housenumber>55</housenumber>
+		<postcode>10119</postcode>	
 	    <hasbooked>null</hasbooked>
 	</Customer>
 	
 	<Customer>
-		<customerID>S_SO_61</customerID>
-		<firsName>Susan</firsName>
-		<lastName>Someone</lastName>
-		<age>68</age>
-		<city>Ealing</city>
-		<street>Cairn Road</street>
-		<housenumber>17</housenumber>
-		<postcode>W 14</postcode>	
+		<customerID>Cust_2</customerID>
+		<firsName>krishnadas</firsName>
+		<lastName>charankatbaiju</lastName>
+		<city>Oxford</city>
+		<street>James Street</street>
+		<housenumber>93</housenumber>
+		<postcode>OX2 6YU</postcode>	
 	    <hasbooked>001</hasbooked>
 	</Customer>
 	
 	<Customer>
-		<customerID>S_SO_62</customerID>
-		<firsName>Tim</firsName>
-		<lastName>Buktu</lastName>
-		<city>Ealing</city>
-		<street>Uxbridge Road</street>
-		<housenumber>111</housenumber>
-		<postcode>W 22</postcode>	
-	    <hasbooked>55</hasbooked>
+		<customerID>Cust_3</customerID>
+		<firsName>Moafaq Jamal</firsName>
+		<lastName>Ashshareef</lastName>
+		<city>Cambridge</city>
+		<street>North Road</street>
+		<housenumber>2571</housenumber>
+		<postcode>CA92 5JF</postcode>	
+	    <hasbooked>null</hasbooked>
+	</Customer>
+	
+	<Customer>
+		<customerID>Cust_4</customerID>
+		<firsName>Soheil</firsName>
+		<lastName>Emd</lastName>
+		<city>London</city>
+		<street>Bahman Road</street>
+		<housenumber>470</housenumber>
+		<postcode>UB7 2TT</postcode>	
+	    <hasbooked>002</hasbooked>
 	</Customer>
 	<!--All attributes of the Customer object - End-->
 	
@@ -89,15 +121,104 @@
 	<!--All attributes of the Amenity object - Start-->
 	<Amenity>
 		<name>pool</name>
-		<url>www.somwhere.uk/scifi</url>
-		<location>Roof Top - floor 67</location>
+		<location>Swimming pool at Roof Top - floor 66</location>
 	</Amenity>
-	
+	<Amenity>
+		<name>swim</name>
+		<location>Swimming pool at Roof Top - floor 66</location>
+	</Amenity>
+	<Amenity>
+		<name>swiming</name>
+		<location>Swimming pool at Roof Top - floor 66</location>
+	</Amenity>		
 	<Amenity>
 		<name>disco</name>
-		<url>www.somwhere.uk/boring</url>
-		<location>Basement - B1</location>
+		<location>Sky Lounge at Roof Top - floor 67</location>
 	</Amenity>
+	<Amenity>
+		<name>drink</name>
+		<location>Sky Lounge at Roof Top - floor 67</location>
+	</Amenity>	
+	<Amenity>
+		<name>club</name>
+		<location>Sky Lounge at Roof Top - floor 67</location>
+	</Amenity>	
+	<Amenity>
+		<name>dance</name>
+		<location>Sky Lounge at Roof Top - floor 67</location>
+	</Amenity>			
+	<Amenity>
+		<name>gym</name>
+		<location>Gym Area at floor 3</location>
+	</Amenity>
+	<Amenity>
+		<name>excersise</name>
+		<location>Gym Area at floor 3</location>
+	</Amenity>	
+	<Amenity>
+		<name>running</name>
+		<location>Gym Area at floor 3</location>
+	</Amenity>
+	<Amenity>
+		<name>spinning</name>
+		<location>Gym Area at floor 3</location>
+	</Amenity>		
+	<Amenity>
+		<name>meeting</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>business</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>	
+	<Amenity>
+		<name>print</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>		
+	<Amenity>
+		<name>email</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>internet</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>	
+	<Amenity>
+		<name>email</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>fax</name>
+		<location>Business Lounge at Ground Floor</location>
+	</Amenity>	
+	<Amenity>
+		<name>dining</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>food</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>breakfast</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>lunch</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>
+	<Amenity>
+		<name>dinner</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>		
+	<Amenity>
+		<name>snack</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>	
+	<Amenity>
+		<name>brunch</name>
+		<location>Dining Area at Ground Floor</location>
+	</Amenity>				
 	<!--All attributes of the Amenity object - End-->
 	
 	
@@ -105,23 +226,23 @@
 	<!--All attributes of the Booking object - Start-->
 	<Booking>
 		<bookingID>001</bookingID>
-		<customerID>S_SO_60</customerID>
-		<startdate>01102011</startdate>
-		<enddate>22102011</enddate>	
+		<customerID>Cust_1</customerID>
+		<startdate>17082016</startdate>
+		<enddate>27082016</enddate>	
 	</Booking>
 	
 	<Booking>
 		<bookingID>002</bookingID>
-		<customerID>S_SO_61</customerID>
-		<startdate>01102011</startdate>
-		<enddate>22102011</enddate>	
+		<customerID>Cust_2</customerID>
+		<startdate>29012016</startdate>
+		<enddate>07022016</enddate>	
 	</Booking>
 	
 	<Booking>
 		<bookingID>003</bookingID>
-		<customerID>S_SO_62</customerID>
-		<startdate>01102011</startdate>
-		<enddate>22102011</enddate>	
+		<customerID>Cust_3</customerID>
+		<startdate>10052016</startdate>
+		<enddate>15052016</enddate>	
 	</Booking>
 	<!--All attributes of the Booking object - End-->
 	
