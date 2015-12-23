@@ -1,5 +1,4 @@
 package Reception;
-
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 import java.awt.*;
 import java.awt.Window.Type;
@@ -12,7 +11,6 @@ import javax.swing.UIManager;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
-@SuppressWarnings("unused")
 public class MainReception {
 
 	public JPanel Inframe, Outframe, Buttonframe;
@@ -30,14 +28,12 @@ public class MainReception {
 	
 	public MainReception() {               // Constructor for an Instance of SimpleGUI
 		
-		myReasoner = new Reasoner(this);         // Instantiate a "brain", reference this GUI to it
-										                      		
+		myReasoner = new Reasoner(this);         // Instantiate a "brain", reference this GUI to it										                      		
 		myReasoner.initknowledge();              // fill "the brain" with knowledge
 		
 		Input = new JTextField(80);	
 		Inputlabel = new JLabel("Question");
 		Input.setBorder(null);
-		//Input.setOpaque(false);
 		
 		
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
@@ -56,7 +52,7 @@ public class MainReception {
 		Info.setEditable(false);  	
 		Info.setEditorKit(new HTMLEditorKit());
 		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
-		//Info.setOpaque(false);
+		
 		
 	    ScrollInfo = new JScrollPane(Info);   									                
 		ScrollInfo.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -65,7 +61,8 @@ public class MainReception {
 	    ScrollInfo.getViewport().setPreferredSize(new Dimension(500,600));
 	    ScrollInfo.getViewport().setOpaque(false);	
 	    ScrollInfo.setBorder(null);
-		Inframe = new JPanel();                             // Frame for the Inputelements
+		
+	    Inframe = new JPanel();                             // Frame for the Inputelements
 		Outframe = new JPanel();                            // Frame for the Outputelements
 					
 		Inframe.add(Inputlabel);                            // adding the elements to the JPanels
@@ -112,21 +109,17 @@ public class MainReception {
 		dialoghistory.add("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> " +
 				          "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, " +
 					      "Just ask me.</H3><br>" +
-				          "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
-				          
-		
+				          "<H3><font face=\"Verdana\">To Start, you can type help to explore more.</H3><br>");
 		Output.setText(dialoghistory.firstElement());
 		Input.requestFocusInWindow();
 	}                                                        // Constructor done
 
 	public void checkbrain() {
-
 		String yo = myReasoner.testit();                     // Testing the reasoner's knowledge
 		System.out.println(yo);                              // Testing the reasoner's knowledge
 	}
 
 	public void questionasked() {                            // log questions in a String vector
-
 		question = Input.getText();
 		generateanswer();
 	}
