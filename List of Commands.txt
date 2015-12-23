@@ -7,6 +7,9 @@ Single Commands
 hi
 thanks
 bye
+help
+?
+
 where is the hotel
 How many rooms are available
 Can i book a room
@@ -17,8 +20,13 @@ I am looking for a triple room
 I am looking for a quad room
 What kind of rooms are available
 What kind of services are available
-
-
+where can i send a fax
+where can i swim
+where can exercise
+where can i have food
+list all rooms
+list all services
+where can i dance
 
 
 Continues Conversations
