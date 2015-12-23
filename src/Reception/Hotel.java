@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Library">
+ * &lt;complexType name="Hotel">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Library", propOrder = {
+@XmlType(name = "Hotel", propOrder = {
     "name",
     "city",
     "street",
@@ -72,10 +72,8 @@ public class Hotel {
     protected String postcode;
     @XmlElement(required = true)
     protected String tel;
-    
     @XmlElement(name = "Room", required = true)
     protected List<Room> room;
-    
     @XmlElement(name = "Customer", required = true)
     protected List<Customer> Customer;
     @XmlElement(name = "Amenity", required = true)
