@@ -4,10 +4,7 @@
 // Any modifications to this file will be lost upon recompilation of the source schema. 
 // Generated on: 2015.11.23 at 01:19:01 PM GMT 
 //
-
-
 package Reception;
-
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -51,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
     "postcode",
     "hasbooked"
 })
+
 public class Customer {
 	
     @XmlElement(required = true)
