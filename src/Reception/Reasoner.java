@@ -11,9 +11,9 @@ public class Reasoner {
 	public Hotel reception;
 	public MainReception Myface;
 
-	
+
 	// The lists holding the class instances of all domain entities - Start
-	public List receptionList = new ArrayList();
+	public List hotelList = new ArrayList();
 	public List theRoomList = new ArrayList();
 	public List theCustomerList = new ArrayList();
 	public List theAmenityList = new ArrayList();
@@ -63,7 +63,7 @@ public class Reasoner {
 	// Constructor - End
 	
 	
-	// Load library database from DataBase.xml File - Start
+	// Load Hotel database from DataBase.xml File - Start
 	public void initknowledge() 
 		{
 			JAXB_XMLParser xmlhandler = new JAXB_XMLParser();
@@ -73,47 +73,74 @@ public class Reasoner {
 		// Synonyms - Start
 			
 			// Add synonyms for Hotel - Start
-			HotelSyn.add("room");
+			HotelSyn.add("address");
 			HotelSyn.add("place");
 			HotelSyn.add("hotel");
 			HotelSyn.add("hotels");
-			HotelSyn.add("help");
-			HotelSyn.add("contact"); 
-			HotelSyn.add("number");
+			HotelSyn.add("rception");
 			// Add synonyms for Hotel - End
 			
 			
 			// Add synonyms for Room - Start
 			RoomSyn.add("room");
-			RoomSyn.add("single"); 
+			RoomSyn.add("single");
+			RoomSyn.add("for one");
 			RoomSyn.add("double");
+			RoomSyn.add("for two");
 			RoomSyn.add("twin");
+			RoomSyn.add("for three");
 			RoomSyn.add("triple");
+			RoomSyn.add("for four");			
 			RoomSyn.add("quad");
 			RoomSyn.add("suite");
-			RoomSyn.add("for 3 people");
-			
+			RoomSyn.add("big family");
 			// Add synonyms for Room - End
 
 			
 			// Add synonyms for Customer - Start		
-			CustomerSyn.add("service");
-			CustomerSyn.add("dining");
-			CustomerSyn.add("excersise");
+			CustomerSyn.add("customers");
+			CustomerSyn.add("customer");
+			CustomerSyn.add("guests");
 			// Add synonyms for Customer - End
 			
 			
 			// Add synonyms for Amenity - Start
 			AmenitySyn.add("amenity");
+			AmenitySyn.add("amenities");
 			AmenitySyn.add("services");
 			AmenitySyn.add("service");
 			AmenitySyn.add("pool");
+			AmenitySyn.add("swim");
+			AmenitySyn.add("swiming");
 			AmenitySyn.add("disco");
+			AmenitySyn.add("drink");
+			AmenitySyn.add("club");
+			AmenitySyn.add("dance");
+			AmenitySyn.add("excersise");
+			AmenitySyn.add("gym");
+			AmenitySyn.add("running");
+			AmenitySyn.add("spinning");
+			AmenitySyn.add("meeting");
+			AmenitySyn.add("business");
+			AmenitySyn.add("print");
+			AmenitySyn.add("internet");
+			AmenitySyn.add("email");
+			AmenitySyn.add("fax");
+			AmenitySyn.add("Dining");
+			AmenitySyn.add("food");
+			AmenitySyn.add("breakfast");
+			AmenitySyn.add("lunch");
+			AmenitySyn.add("dinner");
+			AmenitySyn.add("snack");
+			AmenitySyn.add("brunch");
+
 			// Add synonyms for Amenity - End
 			
 		
 			// Add synonyms for Booking - Start
-			BookingSyn.add(" lending");
+			BookingSyn.add("bookings");
+			BookingSyn.add("booked");
+			
 			// Add synonyms for Booking - End
 			
 			
@@ -140,7 +167,7 @@ public class Reasoner {
 				theAmenityList = reception.getAmenity();
 				theBookingList = reception.getBooking();
 				// Force it to be a List,
-				receptionList.add(reception);
+				hotelList.add(reception);
 				System.out.println("List reading");
 			}
 
@@ -150,18 +177,49 @@ public class Reasoner {
 				System.out.println("error in init");
 			}
 	}
-	// Load library database from DataBase.xml File - End
+	// Load Hotel database from DataBase.xml File - End
 	
 	
-	
+
 	// Generate an Answer - Start
+	
 	public Vector<String> generateAnswer(String input)
 	{
+      
+        
+        // Method to get the time of day and return the correct greeting for Thank you Command - Start
+		Calendar c = Calendar.getInstance();
+		int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+        String greeting = null;
+        if(timeOfDay>=1 && timeOfDay<=12){
+            greeting = "Have a great day";
+        } else if(timeOfDay>=12 && timeOfDay<=16){
+            greeting = "Have a Wonderful Afternoon";
+        } else if(timeOfDay>=16 && timeOfDay<=21){
+            greeting = "Have a Good Evening";
+        } else if(timeOfDay>=21 && timeOfDay<=24){
+            greeting = "Good Night";
+        }
+        // Method to get the time of day and return the correct greeting for Thank you Command  - End
+        
+        // Method to get the time of day and return the correct greeting for Hi Command - Start
+        String higreeting = null;
+        if(timeOfDay>=1 && timeOfDay<=12){
+            higreeting = "Good Morning";
+        } else if(timeOfDay>=12 && timeOfDay<=16){
+            higreeting = "Good Afternoon";
+        } else if(timeOfDay>=16 && timeOfDay<=21){
+            higreeting = "Good Evening";
+        } else if(timeOfDay>=21 && timeOfDay<=24){
+            higreeting = "Good Night";
+        }
+        // Method to get the time of day and return the correct greeting for Hi Command - End
 		Vector<String> out = new Vector<String>();
 		out.clear();
 
-		questiontype = "none";
 		
+		questiontype = "none";
+
 		// Check if answer was generated
 		Integer Answered = 0; 
 		Integer subjectcounter = 0; 
@@ -169,6 +227,11 @@ public class Reasoner {
 		// Convert input to lower case
 		input = input.toLowerCase(); 
 		String answer = ""; 
+		
+
+		
+		// Convert input to lower case
+		input = input.toLowerCase(); 
 
 		// Question Type Validation - Start
 		if (input.contains("how many")) {
@@ -189,6 +252,10 @@ public class Reasoner {
 		}
 
 		if (input.contains("what kind of")) {
+			questiontype = "list";
+			input = input.replace("what kind of", "<b>what kind of</b>");
+		}
+		if (input.contains("what")) {
 			questiontype = "list";
 			input = input.replace("what kind of", "<b>what kind of</b>");
 		}
@@ -244,7 +311,9 @@ public class Reasoner {
 				|| input.contains("can i reserve") 
 				|| input.contains("can i book a")
 				|| input.contains("am i able to") 
-				|| input.contains("could i book") 
+				|| input.contains("could i book")
+				|| input.contains("how about")
+				|| input.contains("i need") 
 				|| input.contains("i want to book"))
 		{
 			questiontype = "intent";
@@ -260,11 +329,31 @@ public class Reasoner {
 				|| input.contains("thanks")
 				|| input.contains("cool thank")) 
 		{
-			questiontype = "farewell";
-			System.out.println("farewell");
+			questiontype = "thanks";
+			System.out.println("thanks");
 		}
 		// Commands - [Thank you] - End
 
+		
+		// Commands - [Hi] - Start
+		if (input.contains("hi") 
+				|| input.contains("hello")
+				|| input.contains("hey")) 
+		{
+			questiontype = "hi";
+			System.out.println("hi");
+		}
+		// Commands - [Hi] - End
+		
+		
+		// Commands - [Bye] - Start
+		if (input.contains("bye") 
+				|| input.contains("good buy")) 
+		{
+			questiontype = "bye";
+			System.out.println("bye");
+		}
+		// Commands - [Bye] - End
 		
 		
 		// Commands - [Help] - Start
@@ -293,7 +382,6 @@ public class Reasoner {
 		
 		// Commands - [CLS] - Start
 		if (input.contains("cls") 
-				|| input.contains("Clean") 
 				|| input.contains("clean")) {
 			questiontype = "CLS";
 			System.out.println("CLS");
@@ -360,33 +448,56 @@ public class Reasoner {
 			if (input.contains(HotelSyn.get(x))) {
 				if (subjectcounter == 0) {
 					input = input.replace(HotelSyn.get(x), "<b>" + HotelSyn.get(x) + "</b>");
-					classtype = receptionList;
-					System.out.println("class type Library recognised");
+					classtype = hotelList;
+					System.out.println("class type Hotel recognised");
 				}
 			}
 		}
 		// Check - [Command Subject (More than one Subject)] - End
 
+		// Response - [Number of Rooms, Bookings, ...] - Start
+		if (questiontype == "amount" + "booked") 
+		{
+			Integer numberof = Count(classtype);
+			answer = ("Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available");
+			Answered = 1;
+		}
+		// Response - [Number of Rooms, Bookings, ...] - End
 
 
-		// Response - [Number of Rooms] - Start
+		// Response - [Number of Rooms, Bookings, ...] - Start
 		if (questiontype == "amount") 
 		{
 			Integer numberof = Count(classtype);
-			answer = ("There are " + numberof + " Rooms Available");
+			answer = ("Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available");
 			Answered = 1;
 		}
-		// Response - [Number of Rooms] - End
+		// Response - [Number of Rooms, Bookings, ...] - End
 
 		
 		
-		// Response - [List of Rooms] - Start
-		if (questiontype == "list") {
-			answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" 
-					+ ListAll(classtype);
-			Answered = 1;
-		}
-		// Response - [List of Rooms] - End
+	        
+		// Response - [List of Rooms, Amenities, Admin ONLY] - Start	        
+		if (questiontype == "list"){
+	        //if(input.contains("hradmin22")){
+	        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+	    		Answered = 1;}
+	        //} 
+	       // else
+	       // {
+	    	//	Reception.MainReception.Info.setText(
+	    	//			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
+	    	//			Reception.MainReception.dialoghistory.removeAllElements();
+	    		//		Reception.MainReception.dialoghistory.add
+	    			//	("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
+	    			//	+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
+	    			//	+ "Just ask me.</H3><br>"
+	    			//	+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
+	    			//	Answered = 1;
+	        //}
+		//}
+
+		// Response - [List of Rooms, Amenities, Admin ONLY] - End
 		
 		
 		
@@ -412,8 +523,7 @@ public class Reasoner {
 		
 		// Location Question - [Start]
 		if (questiontype == "location") { 
-			//answer = ("You can find the " + classtype.get(0).getClass().getSimpleName() + " " + "at " + Location(classtype, input));
-			answer = (Location(classtype, input));
+			answer = ("Reception: You can find the " + classtype.get(0).getClass().getSimpleName() + " " + Location(classtype, input));
 			Answered = 1;
 		}
 		if ((questiontype == "intent" && classtype == theRoomList)
@@ -428,13 +538,30 @@ public class Reasoner {
 		
 		
 		// Response - [Thank You] - Start
-		if (questiontype == "farewell") {
+		if (questiontype == "thanks") {
+			//This method gets username OS
 			String name = System.getenv("USERNAME");
-			answer = ("You are very welcome" + name);
+			answer = ("Reception: You are very welcome " + name +" "+ greeting + ".");
 			Answered = 1;}
 		// Response - [Thank You] - Start
 		
 		
+		// Response - [Hi] - Start
+		if (questiontype == "hi") {
+			//This method gets username OS
+			String name = System.getenv("USERNAME");
+			answer = ("Reception: " + higreeting +" "+ name +" How may i help you ?");
+			Answered = 1;}
+		// Response - [Hi] - Start
+        
+		
+		// Response - [Bye] - Start
+		if (questiontype == "bye") {
+			//This method gets username OS
+			String name = System.getenv("USERNAME");
+			answer = ("Reception: " + greeting +" "+ name +" See you soon.");
+			Answered = 1;}
+		// Response - [Bye] - Start
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
@@ -463,7 +590,8 @@ public class Reasoner {
 		
 		
 		// Response - [CLS] - Start
-		if ((questiontype == "CLS") || (questiontype == "CLEAN")){
+		if ((questiontype == "CLS") || (questiontype == "CLEAN"))
+		{
 			Reception.MainReception.Info.setText(
 			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
 			Reception.MainReception.dialoghistory.removeAllElements();
@@ -472,13 +600,14 @@ public class Reasoner {
 			+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
 			+ "Just ask me.</H3><br>"
 			+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
-			Answered = 1;}
+			Answered = 1;
+		}
 		// Response - [CLS] - End
 
 		
 		// Response - [Null] - [Start]
 		if (Answered == 0) {
-			answer = ("Sorry I didn't understand that." + "<br> " +
+			answer = ("Reception: Sorry I didn't understand that." + "<br> " +
 					  "You can type [ Help ] for more information and list of commands.");
 			}
 		// Response - [Null] - [End]
@@ -490,8 +619,8 @@ public class Reasoner {
 	}
 	// Generate an Answer - [End]
 	
-	
-	
+
+
 	// Methods to generate answers for the different kinds of Questions - Start
 	// Answer a question of the "Is a book or "it (meaning a book) available ?"
 	// kind
@@ -508,16 +637,16 @@ public class Reasoner {
 			// Identify Room Type
 			for (int i = 0; i < thelist.size(); i++) {
 				curbook = (Room) thelist.get(i);
-				if (input.contains(curbook.getTitle().toLowerCase())) { 
+				if (input.contains(curbook.gettype().toLowerCase())) { 
 					counter = i;
 					Currentindex = counter;
 					theRecentThing.clear();
 					classtype = theRoomList;
 					theRecentThing.add(classtype.get(Currentindex));
-					roometype = curbook.getTitle();
-					if (input.contains(curbook.getTitle().toLowerCase())) {
-						input = input.replace(curbook.getTitle().toLowerCase(),
-								"<b>" + curbook.getTitle().toLowerCase() + "</b>");
+					roometype = curbook.gettype();
+					if (input.contains(curbook.gettype().toLowerCase())) {
+						input = input.replace(curbook.gettype().toLowerCase(),
+								"<b>" + curbook.gettype().toLowerCase() + "</b>");
 					}
 					i = thelist.size() + 1; // force break
 				}
@@ -529,7 +658,7 @@ public class Reasoner {
 
 			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("room")) { 
 				curbook = (Room) theRecentThing.get(0);
-				roometype = curbook.getTitle();
+				roometype = curbook.gettype();
 			}
 		}
 
@@ -570,14 +699,11 @@ public class Reasoner {
 	
 	
 	
-	// Response Web Area - [Number of Rooms] - Start
+	// Response Web Area - [Type of Rooms] - Start
 	public Integer Count(List thelist) { 
 
-		// URL = "http:// moafaq.com/HotelRec/room.html";
-		// URL2 = "http:// moafaq.com/HotelRec/room.html";
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=";
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-
 		System.out.println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
@@ -586,7 +712,7 @@ public class Reasoner {
 
 		return thelist.size();
 	}
-	// Response Web Area - [Number of Rooms] - End
+	// Response Web Area - [Type of Rooms] - End
 
 	
 	
@@ -597,7 +723,7 @@ public class Reasoner {
 		if (thelist == theRoomList) {
 			for (int i = 0; i < thelist.size(); i++) {
 				Room curbook = (Room) thelist.get(i);
-				listemall = listemall + "<li>" + (curbook.getTitle() + "</li>");
+				listemall = listemall + "<li>" + (curbook.gettype() + "</li>");
 			}
 		}
 		if (thelist == theCustomerList) {
@@ -650,7 +776,7 @@ public class Reasoner {
 		if (thelist == theRoomList) {
 			for (int i = 0; i < thelist.size(); i++) {
 				Room curbook = (Room) thelist.get(i);
-				if (input.contains(curbook.getTitle().toLowerCase()))
+				if (input.contains(curbook.gettype().toLowerCase()))
 						{
 					counter = i;
 					yesorno.set(0, "Requested Room is Available."); 
@@ -726,16 +852,16 @@ public class Reasoner {
 				Room curbook = (Room) theRecentThing.get(0); 
 				location = (curbook.getLocation() + " "); 
 			}
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("member")) {
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("customer")) {
 				Customer curmem = (Customer) theRecentThing.get(0); 
 				location = (curmem.getCity() + " " + curmem.getStreet() + " " + curmem.getHousenumber()); 
 			}
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("catalog")) 
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("amenity")) 
 				{
 					Amenity curcat = (Amenity) theRecentThing.get(0);
 					location = (curcat.getLocation() + " ");
 				}
-			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("library")) { 
+			if (theRecentThing.get(0).getClass().getSimpleName().toLowerCase().equals("hotel")) { 
 			
 				location = (reception.getCity() + " " + reception.getStreet() + reception
 						.getHousenumber());
@@ -748,7 +874,7 @@ public class Reasoner {
 				int counter = 0;
 				for (int i = 0; i < thelist.size(); i++) {
 					Room curbook = (Room) thelist.get(i);
-					if (input.contains(curbook.getTitle().toLowerCase()))
+					if (input.contains(curbook.gettype().toLowerCase()))
 						counter = i;
 						location = (curbook.getLocation() + " ");
 						Currentindex = counter;
@@ -792,12 +918,14 @@ public class Reasoner {
 					}
 				}
 			}
-
-			if (thelist == receptionList) {
-				location = (reception.getCity() + " " + reception.getStreet() + reception
-						.getHousenumber());
+			
+			// Print Hotel Address - Start
+			if (thelist == hotelList) {
+				location = (" at" + "<br>" + reception.getHousenumber() +""+ reception.getStreet() + reception.getCity() + "" +reception
+						.getPostcode() + "<br>" + reception.getTel());
 			}
-		
+			// Print Hotel Address - End
+			
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
@@ -827,7 +955,7 @@ public class Reasoner {
 	
 	
 	// Reading the web sites - Start
-	public String readwebsite(String url) {
+	public static String readwebsite(String url) {
 		String webtext = "";
 		try {
 			BufferedReader readit = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
@@ -848,7 +976,6 @@ public class Reasoner {
 		return webtext;
 	}
 	// Reading the web sites - End
-	
-	
+
 }
 // Main Class - End
