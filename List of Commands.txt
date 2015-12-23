@@ -1,3 +1,4 @@
+hi
 Commands:
 
 Single Commands
@@ -28,11 +29,13 @@ where can i find it
 where is it
 
 ----------------------------------------------
+
 I am looking for pool
 where is it
 ----------------------------------------------
 
+Hi
+i need a single room
+how about a double room
+where can i find it
 
-Can i book a room
-
-can i book a single room
