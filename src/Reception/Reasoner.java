@@ -133,14 +133,12 @@ public class Reasoner {
 			AmenitySyn.add("dinner");
 			AmenitySyn.add("snack");
 			AmenitySyn.add("brunch");
-
 			// Add synonyms for Amenity - End
 			
 		
 			// Add synonyms for Booking - Start
 			BookingSyn.add("bookings");
 			BookingSyn.add("booked");
-			
 			// Add synonyms for Booking - End
 			
 			
@@ -182,7 +180,6 @@ public class Reasoner {
 	
 
 	// Generate an Answer - Start
-	
 	public Vector<String> generateAnswer(String input)
 	{
       
@@ -202,6 +199,8 @@ public class Reasoner {
         }
         // Method to get the time of day and return the correct greeting for Thank you Command  - End
         
+        
+        
         // Method to get the time of day and return the correct greeting for Hi Command - Start
         String higreeting = null;
         if(timeOfDay>=1 && timeOfDay<=12){
@@ -214,10 +213,11 @@ public class Reasoner {
             higreeting = "Good Night";
         }
         // Method to get the time of day and return the correct greeting for Hi Command - End
-		Vector<String> out = new Vector<String>();
+		
+        
+        Vector<String> out = new Vector<String>();
 		out.clear();
 
-		
 		questiontype = "none";
 
 		// Check if answer was generated
@@ -229,7 +229,6 @@ public class Reasoner {
 		String answer = ""; 
 		
 
-		
 		// Convert input to lower case
 		input = input.toLowerCase(); 
 
@@ -455,6 +454,9 @@ public class Reasoner {
 		}
 		// Check - [Command Subject (More than one Subject)] - End
 
+		
+		
+		
 		// Response - [Number of Rooms, Bookings, ...] - Start
 		if (questiontype == "amount" + "booked") 
 		{
@@ -464,6 +466,8 @@ public class Reasoner {
 		}
 		// Response - [Number of Rooms, Bookings, ...] - End
 
+		
+		
 
 		// Response - [Number of Rooms, Bookings, ...] - Start
 		if (questiontype == "amount") 
@@ -482,22 +486,21 @@ public class Reasoner {
 	        //if(input.contains("hradmin22")){
 	        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
 	    		Answered = 1;}
-	        //} 
-	       // else
-	       // {
-	    	//	Reception.MainReception.Info.setText(
-	    	//			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
-	    	//			Reception.MainReception.dialoghistory.removeAllElements();
-	    		//		Reception.MainReception.dialoghistory.add
-	    			//	("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
-	    			//	+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
-	    			//	+ "Just ask me.</H3><br>"
-	    			//	+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
-	    			//	Answered = 1;
-	        //}
-		//}
-
-		// Response - [List of Rooms, Amenities, Admin ONLY] - End
+//	        } 
+//	        else
+//	        {
+//	        	//this code act as CLS (clear screen)
+//	    		Reception.MainReception.Info.setText(
+//	    				"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
+//	    				Reception.MainReception.dialoghistory.removeAllElements();
+//	    				Reception.MainReception.dialoghistory.add
+//	    				("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
+//	    				+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
+//	    				+ "Just ask me.</H3><br>"
+//	    				+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
+//	    				Answered = 1;
+//	        }
+		//Response - [List of Rooms, Amenities, Admin ONLY] - End
 		
 		
 		
@@ -546,6 +549,7 @@ public class Reasoner {
 		// Response - [Thank You] - Start
 		
 		
+		
 		// Response - [Hi] - Start
 		if (questiontype == "hi") {
 			//This method gets username OS
@@ -555,6 +559,7 @@ public class Reasoner {
 		// Response - [Hi] - Start
         
 		
+		
 		// Response - [Bye] - Start
 		if (questiontype == "bye") {
 			//This method gets username OS
@@ -562,6 +567,8 @@ public class Reasoner {
 			answer = ("Reception: " + greeting +" "+ name +" See you soon.");
 			Answered = 1;}
 		// Response - [Bye] - Start
+		
+		
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
@@ -589,6 +596,7 @@ public class Reasoner {
 
 		
 		
+		
 		// Response - [CLS] - Start
 		if ((questiontype == "CLS") || (questiontype == "CLEAN"))
 		{
@@ -604,6 +612,7 @@ public class Reasoner {
 		}
 		// Response - [CLS] - End
 
+		
 		
 		// Response - [Null] - [Start]
 		if (Answered == 0) {
@@ -621,9 +630,8 @@ public class Reasoner {
 	
 
 
+	
 	// Methods to generate answers for the different kinds of Questions - Start
-	// Answer a question of the "Is a book or "it (meaning a book) available ?"
-	// kind
 	public String RoomAvailable(List thelist, String input) {
 		
 		boolean available = true;
@@ -631,7 +639,7 @@ public class Reasoner {
 		Room curbook = new Room();
 		String roometype = "";
 
-		if (thelist == theRoomList) { // This is a candidate for a name change
+		if (thelist == theRoomList) {
 			int counter = 0;
 
 			// Identify Room Type
@@ -917,12 +925,14 @@ public class Reasoner {
 				}
 			}
 			
+			
 			// Print Hotel Address - Start
 			if (thelist == hotelList) {
 				location = (" at" + "<br>" + reception.getHousenumber() +""+ reception.getStreet() + reception.getCity() + "" +reception
 						.getPostcode() + "<br>" + reception.getTel());
 			}
 			// Print Hotel Address - End
+			
 			
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
