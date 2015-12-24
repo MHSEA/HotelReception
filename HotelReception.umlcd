@@ -20,85 +20,85 @@
       <cardinality xmi:id="_sqq9OKoUEeWyt_o_m1MuYg" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_gJT48KoVEeWyt_o_m1MuYg" sourceAnchor="76.0,0.0" targetAnchor="159.0,90.0" target="_m_5MUKm_EeWyt_o_m1MuYg" source="_pMVDgKoTEeWyt_o_m1MuYg">
-    <modelElement href="HotelReception.uml#_gJRcsKoVEeWyt_o_m1MuYg"/>
-    <visualProperties xmi:id="_gJT48aoVEeWyt_o_m1MuYg"/>
-    <bendpoints xmi:id="_lubuYaoVEeWyt_o_m1MuYg" sourceY="-124" targetX="89"/>
-    <nameVisual xmi:id="_gJT48qoVEeWyt_o_m1MuYg" text="">
-      <visualProperties xmi:id="_gME5EKoVEeWyt_o_m1MuYg" position="-52.0,1.0"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ix9JQKobEeWEbY8xt8OD1w" sourceAnchor="159.0,90.0" targetAnchor="76.0,0.0" target="_pMVDgKoTEeWyt_o_m1MuYg" source="_m_5MUKm_EeWyt_o_m1MuYg">
+    <modelElement href="HotelReception.uml#_IxxjEKobEeWEbY8xt8OD1w"/>
+    <visualProperties xmi:id="_Ix9JQaobEeWEbY8xt8OD1w"/>
+    <bendpoints xmi:id="_a1GloKobEeWEbY8xt8OD1w" sourceX="89" targetY="-124"/>
+    <nameVisual xmi:id="_Ix9JQqobEeWEbY8xt8OD1w" text="">
+      <visualProperties xmi:id="_I2IeoKobEeWEbY8xt8OD1w" position="2.0,27.0"/>
     </nameVisual>
-    <sourceRole xmi:id="_gJT486oVEeWyt_o_m1MuYg" aggregationKind="NONE" name="booking" navigable="true">
-      <modelElement href="HotelReception.uml#_gJSDwKoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_gMESAKoVEeWyt_o_m1MuYg" position="2.0,-72.0"/>
-      <visibility xmi:id="_gJT49KoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_gJT49aoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <sourceRole xmi:id="_Ix9JQ6obEeWEbY8xt8OD1w" aggregationKind="NONE" name="" navigable="true">
+      <modelElement href="HotelReception.uml#_IxyKIKobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_I2H3kKobEeWEbY8xt8OD1w" position="23.0,41.0"/>
+      <visibility xmi:id="_Ix9JRKobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_Ix9JRaobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
     </sourceRole>
-    <targetRole xmi:id="_gJT49qoVEeWyt_o_m1MuYg" aggregationKind="NONE" name="customer" navigable="true">
-      <modelElement href="HotelReception.uml#_gJSDw6oVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_gME5EaoVEeWyt_o_m1MuYg" position="23.0,41.0"/>
-      <visibility xmi:id="_gJT496oVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_gJT4-KoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <targetRole xmi:id="_Ix9JRqobEeWEbY8xt8OD1w" aggregationKind="SHARED" name="booking" navigable="true">
+      <modelElement href="HotelReception.uml#_Ix0mYaobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_I2IeoaobEeWEbY8xt8OD1w" position="2.0,-71.5" visible="false"/>
+      <visibility xmi:id="_Ix9JR6obEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_Ix9JSKobEeWEbY8xt8OD1w" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ihbm4KoVEeWyt_o_m1MuYg" sourceAnchor="77.0,0.0" targetAnchor="151.0,82.0" target="_R1CM8KoTEeWyt_o_m1MuYg" source="_F4DoIKoUEeWyt_o_m1MuYg">
-    <modelElement href="HotelReception.uml#_ihZKoKoVEeWyt_o_m1MuYg"/>
-    <visualProperties xmi:id="_ihbm4aoVEeWyt_o_m1MuYg"/>
-    <bendpoints xmi:id="_lubuYKoVEeWyt_o_m1MuYg" sourceY="-139" targetX="190"/>
-    <nameVisual xmi:id="_ihbm4qoVEeWyt_o_m1MuYg" text="">
-      <visualProperties xmi:id="_ikjzYKoVEeWyt_o_m1MuYg" position="-101.0,-19.0"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_OJLFkKobEeWEbY8xt8OD1w" sourceAnchor="0.0,82.0" targetAnchor="159.0,59.0" target="_m_5MUKm_EeWyt_o_m1MuYg" source="_R1CM8KoTEeWyt_o_m1MuYg">
+    <modelElement href="HotelReception.uml#_OJHbMKobEeWEbY8xt8OD1w"/>
+    <visualProperties xmi:id="_OJLFkaobEeWEbY8xt8OD1w"/>
+    <nameVisual xmi:id="_OJLFkqobEeWEbY8xt8OD1w" text="">
+      <visualProperties xmi:id="_OLQwQKobEeWEbY8xt8OD1w" position="-5.0,1.9999999999999858"/>
     </nameVisual>
-    <sourceRole xmi:id="_ihbm46oVEeWyt_o_m1MuYg" aggregationKind="NONE" name="room" navigable="true">
-      <modelElement href="HotelReception.uml#_ihZKoaoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_ikjMUaoVEeWyt_o_m1MuYg" position="-45.0,-98.0"/>
-      <visibility xmi:id="_ihbm5KoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_ihbm5aoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <sourceRole xmi:id="_OJLFk6obEeWEbY8xt8OD1w" aggregationKind="NONE" name="" navigable="true">
+      <modelElement href="HotelReception.uml#_OJICQKobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_OLPiIKobEeWEbY8xt8OD1w" position="-76.0,2.0"/>
+      <visibility xmi:id="_OJLFlKobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_OJLFlaobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
     </sourceRole>
-    <targetRole xmi:id="_ihbm5qoVEeWyt_o_m1MuYg" aggregationKind="NONE" name="hotel" navigable="true">
-      <modelElement href="HotelReception.uml#_ihZKpKoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_ikjzYaoVEeWyt_o_m1MuYg" position="30.0,2.0000000000000284"/>
-      <visibility xmi:id="_ihbm56oVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_ihbm6KoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <targetRole xmi:id="_OJLFlqobEeWEbY8xt8OD1w" aggregationKind="SHARED" name="customer" navigable="true">
+      <modelElement href="HotelReception.uml#_OJICQ6obEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_OLQwQaobEeWEbY8xt8OD1w" position="44.5,-46.500000000000014" visible="false"/>
+      <visibility xmi:id="_OJLFl6obEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_OJLFmKobEeWEbY8xt8OD1w" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_kEptIKoVEeWyt_o_m1MuYg" sourceAnchor="43.0,0.0" targetAnchor="75.0,165.0" target="_R1CM8KoTEeWyt_o_m1MuYg" source="_RhizwKoUEeWyt_o_m1MuYg">
-    <modelElement href="HotelReception.uml#_kEnQ4KoVEeWyt_o_m1MuYg"/>
-    <visualProperties xmi:id="_kEptIaoVEeWyt_o_m1MuYg"/>
-    <nameVisual xmi:id="_kEptIqoVEeWyt_o_m1MuYg" text="">
-      <visualProperties xmi:id="_kHaGMKoVEeWyt_o_m1MuYg" position="-13.0,-8.0"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_WkaMgKobEeWEbY8xt8OD1w" sourceAnchor="101.0,165.0" targetAnchor="69.0,0.0" target="_RhizwKoUEeWyt_o_m1MuYg" source="_R1CM8KoTEeWyt_o_m1MuYg">
+    <modelElement href="HotelReception.uml#_WkV7EKobEeWEbY8xt8OD1w"/>
+    <visualProperties xmi:id="_WkaMgaobEeWEbY8xt8OD1w"/>
+    <nameVisual xmi:id="_WkaMgqobEeWEbY8xt8OD1w" text="">
+      <visualProperties xmi:id="_WmXUUKobEeWEbY8xt8OD1w" position="2.0,-8.0"/>
     </nameVisual>
-    <sourceRole xmi:id="_kEptI6oVEeWyt_o_m1MuYg" aggregationKind="NONE" name="amenity" navigable="true">
-      <modelElement href="HotelReception.uml#_kEnQ4aoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_kHZfIKoVEeWyt_o_m1MuYg" position="-99.0,-46.0"/>
-      <visibility xmi:id="_kEptJKoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_kEptJaoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <sourceRole xmi:id="_WkaMg6obEeWEbY8xt8OD1w" aggregationKind="NONE" name="" navigable="true">
+      <modelElement href="HotelReception.uml#_WkWiIKobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_WmWtQKobEeWEbY8xt8OD1w" position="-44.0,6.0"/>
+      <visibility xmi:id="_WkaMhKobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_WkaMhaobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
     </sourceRole>
-    <targetRole xmi:id="_kEptJqoVEeWyt_o_m1MuYg" aggregationKind="NONE" name="hotel" navigable="true">
-      <modelElement href="HotelReception.uml#_kEn38aoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_kHaGMaoVEeWyt_o_m1MuYg" position="2.0,6.0"/>
-      <visibility xmi:id="_kEptJ6oVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_kEptKKoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <targetRole xmi:id="_WkaMhqobEeWEbY8xt8OD1w" aggregationKind="SHARED" name="amenity" navigable="true">
+      <modelElement href="HotelReception.uml#_WkWiI6obEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_WmX7YKobEeWEbY8xt8OD1w" position="41.0,-46.0" visible="false"/>
+      <visibility xmi:id="_WkaMh6obEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_WkaMiKobEeWEbY8xt8OD1w" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_lrnq8KoVEeWyt_o_m1MuYg" sourceAnchor="159.0,59.0" targetAnchor="0.0,82.0" target="_R1CM8KoTEeWyt_o_m1MuYg" source="_m_5MUKm_EeWyt_o_m1MuYg">
-    <modelElement href="HotelReception.uml#_lrlOsKoVEeWyt_o_m1MuYg"/>
-    <visualProperties xmi:id="_lrnq8aoVEeWyt_o_m1MuYg"/>
-    <nameVisual xmi:id="_lrnq8qoVEeWyt_o_m1MuYg" text="">
-      <visualProperties xmi:id="_luc8gKoVEeWyt_o_m1MuYg" position="-5.0,2.5"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_azW5MKobEeWEbY8xt8OD1w" sourceAnchor="151.0,82.0" targetAnchor="77.0,0.0" target="_F4DoIKoUEeWyt_o_m1MuYg" source="_R1CM8KoTEeWyt_o_m1MuYg">
+    <modelElement href="HotelReception.uml#_azTO0KobEeWEbY8xt8OD1w"/>
+    <visualProperties xmi:id="_azW5MaobEeWEbY8xt8OD1w"/>
+    <bendpoints xmi:id="_a1HMsKobEeWEbY8xt8OD1w" sourceX="190" targetY="-139"/>
+    <nameVisual xmi:id="_azW5MqobEeWEbY8xt8OD1w" text="">
+      <visualProperties xmi:id="_a1KQAKobEeWEbY8xt8OD1w" position="-12.0,41.5"/>
     </nameVisual>
-    <sourceRole xmi:id="_lrnq86oVEeWyt_o_m1MuYg" aggregationKind="NONE" name="customer" navigable="true">
-      <modelElement href="HotelReception.uml#_lrlOsaoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_lucVcKoVEeWyt_o_m1MuYg" position="44.5,-46.5"/>
-      <visibility xmi:id="_lrnq9KoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_lrnq9aoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <sourceRole xmi:id="_azW5M6obEeWEbY8xt8OD1w" aggregationKind="NONE" name="" navigable="true">
+      <modelElement href="HotelReception.uml#_azTO0aobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_a1JB4KobEeWEbY8xt8OD1w" position="30.200000000000045,2.5"/>
+      <visibility xmi:id="_azW5NKobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_azW5NaobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
     </sourceRole>
-    <targetRole xmi:id="_lrnq9qoVEeWyt_o_m1MuYg" aggregationKind="NONE" name="hotel" navigable="true">
-      <modelElement href="HotelReception.uml#_lrlOtKoVEeWyt_o_m1MuYg"/>
-      <visualProperties xmi:id="_luc8gaoVEeWyt_o_m1MuYg" position="-75.83333333333337,2.5"/>
-      <visibility xmi:id="_lrnq96oVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_lrnq-KoVEeWyt_o_m1MuYg" label="*" max="-1"/>
+    <targetRole xmi:id="_azW5NqobEeWEbY8xt8OD1w" aggregationKind="SHARED" name="room" navigable="true">
+      <modelElement href="HotelReception.uml#_azT14KobEeWEbY8xt8OD1w"/>
+      <visualProperties xmi:id="_a1KQAaobEeWEbY8xt8OD1w" position="-46.0,-68.875" visible="false"/>
+      <visibility xmi:id="_azW5N6obEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_azW5OKobEeWEbY8xt8OD1w" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_m_5MUKm_EeWyt_o_m1MuYg" name="Customer" associationsIn="_gJT48KoVEeWyt_o_m1MuYg" associationsOut="_lrnq8KoVEeWyt_o_m1MuYg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_m_5MUKm_EeWyt_o_m1MuYg" name="Customer" associationsIn="_OJLFkKobEeWEbY8xt8OD1w" associationsOut="_Ix9JQKobEeWEbY8xt8OD1w">
     <modelElement href="HotelReception.uml#_m_3-MKm_EeWyt_o_m1MuYg"/>
     <visualProperties xmi:id="_m_5MUam_EeWyt_o_m1MuYg" position="65.0,35.0" size="159.0,181.0"/>
     <visibility xmi:id="_m_5MUqm_EeWyt_o_m1MuYg" label="+"/>
@@ -166,24 +166,24 @@
         <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </type>
     </attributes>
-    <attributes xmi:id="_gJVHEKoVEeWyt_o_m1MuYg" name="booking">
-      <modelElement href="HotelReception.uml#_gJSDwKoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_gJVHEaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_gJVHEqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_gJVHE6oVEeWyt_o_m1MuYg" name="Booking">
+    <attributes xmi:id="_IyBasKobEeWEbY8xt8OD1w" name="booking">
+      <modelElement href="HotelReception.uml#_Ix0mYaobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_IyBasaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_IyBasqobEeWEbY8xt8OD1w" label="*" max="-1"/>
+      <type xmi:id="_IyBas6obEeWEbY8xt8OD1w" name="Booking">
         <modelElement href="HotelReception.uml#_pMT1YKoTEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
-    <attributes xmi:id="_lro5EKoVEeWyt_o_m1MuYg" name="hotel">
-      <modelElement href="HotelReception.uml#_lrlOtKoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_lro5EaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_lro5EqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_lro5E6oVEeWyt_o_m1MuYg" name="Hotel">
+    <attributes xmi:id="_OJLsoKobEeWEbY8xt8OD1w" name="">
+      <modelElement href="HotelReception.uml#_OJICQKobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_OJLsoaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_OJLsoqobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_OJLso6obEeWEbY8xt8OD1w" name="Hotel">
         <modelElement href="HotelReception.uml#_R1Bl4KoTEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_R1CM8KoTEeWyt_o_m1MuYg" name="Hotel" associationsIn="_ihbm4KoVEeWyt_o_m1MuYg _kEptIKoVEeWyt_o_m1MuYg _lrnq8KoVEeWyt_o_m1MuYg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_R1CM8KoTEeWyt_o_m1MuYg" name="Hotel" associationsOut="_OJLFkKobEeWEbY8xt8OD1w _WkaMgKobEeWEbY8xt8OD1w _azW5MKobEeWEbY8xt8OD1w">
     <modelElement href="HotelReception.uml#_R1Bl4KoTEeWyt_o_m1MuYg"/>
     <visualProperties xmi:id="_R1CM8aoTEeWyt_o_m1MuYg" position="465.0,12.0" size="151.0,165.0"/>
     <visibility xmi:id="_R1CM8qoTEeWyt_o_m1MuYg" label="+"/>
@@ -235,32 +235,32 @@
         <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </type>
     </attributes>
-    <attributes xmi:id="_ihc1AKoVEeWyt_o_m1MuYg" name="room">
-      <modelElement href="HotelReception.uml#_ihZKoaoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_ihc1AaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_ihc1AqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_ihc1A6oVEeWyt_o_m1MuYg" name="Room">
-        <modelElement href="HotelReception.uml#_F4DBEKoUEeWyt_o_m1MuYg"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_kEqUMKoVEeWyt_o_m1MuYg" name="amenity">
-      <modelElement href="HotelReception.uml#_kEnQ4aoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_kEqUMaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_kEqUMqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_kEqUM6oVEeWyt_o_m1MuYg" name="Amenity">
-        <modelElement href="HotelReception.uml#_RhiMsKoUEeWyt_o_m1MuYg"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_lroSAKoVEeWyt_o_m1MuYg" name="customer">
-      <modelElement href="HotelReception.uml#_lrlOsaoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_lroSAaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_lroSAqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_lroSA6oVEeWyt_o_m1MuYg" name="Customer">
+    <attributes xmi:id="_OJM6wKobEeWEbY8xt8OD1w" name="customer">
+      <modelElement href="HotelReception.uml#_OJICQ6obEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_OJNh0KobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_OJNh0aobEeWEbY8xt8OD1w" label="*" max="-1"/>
+      <type xmi:id="_OJNh0qobEeWEbY8xt8OD1w" name="Customer">
         <modelElement href="HotelReception.uml#_m_3-MKm_EeWyt_o_m1MuYg"/>
       </type>
     </attributes>
+    <attributes xmi:id="_WkcBsKobEeWEbY8xt8OD1w" name="amenity">
+      <modelElement href="HotelReception.uml#_WkWiI6obEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_WkcBsaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_WkcBsqobEeWEbY8xt8OD1w" label="*" max="-1"/>
+      <type xmi:id="_WkcBs6obEeWEbY8xt8OD1w" name="Amenity">
+        <modelElement href="HotelReception.uml#_RhiMsKoUEeWyt_o_m1MuYg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_azZVcKobEeWEbY8xt8OD1w" name="room">
+      <modelElement href="HotelReception.uml#_azT14KobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_azZVcaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_azZVcqobEeWEbY8xt8OD1w" label="*" max="-1"/>
+      <type xmi:id="_azZVc6obEeWEbY8xt8OD1w" name="Room">
+        <modelElement href="HotelReception.uml#_F4DBEKoUEeWyt_o_m1MuYg"/>
+      </type>
+    </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_F4DoIKoUEeWyt_o_m1MuYg" name="Room" associationsIn="_sqq9MKoUEeWyt_o_m1MuYg" associationsOut="_ihbm4KoVEeWyt_o_m1MuYg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_F4DoIKoUEeWyt_o_m1MuYg" name="Room" associationsIn="_sqq9MKoUEeWyt_o_m1MuYg _azW5MKobEeWEbY8xt8OD1w">
     <modelElement href="HotelReception.uml#_F4DBEKoUEeWyt_o_m1MuYg"/>
     <visualProperties xmi:id="_F4DoIaoUEeWyt_o_m1MuYg" position="729.0,233.0" size="154.0,146.0"/>
     <visibility xmi:id="_F4DoIqoUEeWyt_o_m1MuYg" label="+"/>
@@ -296,16 +296,16 @@
         <modelElement href="HotelReception.uml#_pMT1YKoTEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
-    <attributes xmi:id="_ihdcEKoVEeWyt_o_m1MuYg" name="hotel">
-      <modelElement href="HotelReception.uml#_ihZKpKoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_ihdcEaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_ihdcEqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_ihdcE6oVEeWyt_o_m1MuYg" name="Hotel">
+    <attributes xmi:id="_azYHUKobEeWEbY8xt8OD1w" name="">
+      <modelElement href="HotelReception.uml#_azTO0aobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_azYHUaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_azYHUqobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_azYHU6obEeWEbY8xt8OD1w" name="Hotel">
         <modelElement href="HotelReception.uml#_R1Bl4KoTEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_pMVDgKoTEeWyt_o_m1MuYg" name="Booking" associationsOut="_sqq9MKoUEeWyt_o_m1MuYg _gJT48KoVEeWyt_o_m1MuYg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_pMVDgKoTEeWyt_o_m1MuYg" name="Booking" associationsIn="_Ix9JQKobEeWEbY8xt8OD1w" associationsOut="_sqq9MKoUEeWyt_o_m1MuYg">
     <modelElement href="HotelReception.uml#_pMT1YKoTEeWyt_o_m1MuYg"/>
     <visualProperties xmi:id="_pMVDgaoTEeWyt_o_m1MuYg" position="237.0,249.0" size="152.0,142.0"/>
     <visibility xmi:id="_pMVDgqoTEeWyt_o_m1MuYg" label="+"/>
@@ -349,16 +349,16 @@
         <modelElement href="HotelReception.uml#_F4DBEKoUEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
-    <attributes xmi:id="_gJVuIKoVEeWyt_o_m1MuYg" name="customer">
-      <modelElement href="HotelReception.uml#_gJSDw6oVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_gJVuIaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_gJVuIqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_gJVuI6oVEeWyt_o_m1MuYg" name="Customer">
+    <attributes xmi:id="_Ix--cKobEeWEbY8xt8OD1w" name="">
+      <modelElement href="HotelReception.uml#_IxyKIKobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_Ix--caobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_Ix--cqobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_Ix--c6obEeWEbY8xt8OD1w" name="Customer">
         <modelElement href="HotelReception.uml#_m_3-MKm_EeWyt_o_m1MuYg"/>
       </type>
     </attributes>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_RhizwKoUEeWyt_o_m1MuYg" name="Amenity" associationsOut="_kEptIKoVEeWyt_o_m1MuYg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_RhizwKoUEeWyt_o_m1MuYg" name="Amenity" associationsIn="_WkaMgKobEeWEbY8xt8OD1w">
     <modelElement href="HotelReception.uml#_RhiMsKoUEeWyt_o_m1MuYg"/>
     <visualProperties xmi:id="_RhizwaoUEeWyt_o_m1MuYg" position="497.0,240.0" size="138.0,98.0"/>
     <visibility xmi:id="_RhizwqoUEeWyt_o_m1MuYg" label="+"/>
@@ -378,11 +378,11 @@
         <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </type>
     </attributes>
-    <attributes xmi:id="_kEriUKoVEeWyt_o_m1MuYg" name="hotel">
-      <modelElement href="HotelReception.uml#_kEn38aoVEeWyt_o_m1MuYg"/>
-      <visibility xmi:id="_kEriUaoVEeWyt_o_m1MuYg" label="+"/>
-      <cardinality xmi:id="_kEriUqoVEeWyt_o_m1MuYg" label="*" max="-1"/>
-      <type xmi:id="_kEriU6oVEeWyt_o_m1MuYg" name="Hotel">
+    <attributes xmi:id="_WkazkKobEeWEbY8xt8OD1w" name="">
+      <modelElement href="HotelReception.uml#_WkWiIKobEeWEbY8xt8OD1w"/>
+      <visibility xmi:id="_WkazkaobEeWEbY8xt8OD1w" label="+"/>
+      <cardinality xmi:id="_WkazkqobEeWEbY8xt8OD1w" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_Wkazk6obEeWEbY8xt8OD1w" name="Hotel">
         <modelElement href="HotelReception.uml#_R1Bl4KoTEeWyt_o_m1MuYg"/>
       </type>
     </attributes>
