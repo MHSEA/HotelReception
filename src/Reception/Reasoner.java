@@ -553,8 +553,7 @@ public class Reasoner {
 		// Response - [Hi] - Start
 		if (questiontype == "hi") {
 			//This method gets username OS
-			String name = System.getProperty("user.name"); 
-					//System.getenv("USERNAME");
+			String name = System.getProperty("user.name");
 			answer = ("Reception: " + higreeting +" "+ name +" How may i help you ?");
 			Answered = 1;}
 		// Response - [Hi] - Start
@@ -564,7 +563,7 @@ public class Reasoner {
 		// Response - [Bye] - Start
 		if (questiontype == "bye") {
 			//This method gets username OS
-			String name = System.getenv("USERNAME");
+			String name = System.getProperty("user.name");
 			answer = ("Reception: " + greeting +" "+ name +" See you soon.");
 			Answered = 1;}
 		// Response - [Bye] - Start
