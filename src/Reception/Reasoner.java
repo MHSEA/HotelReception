@@ -598,8 +598,9 @@ public class Reasoner {
 		
 		
 		// Response - [CLS] - Start
-		if ((questiontype == "CLS") || (questiontype == "CLEAN"))
+		if ((questiontype == "CLS") || (questiontype == "CLEAR"))
 		{
+			
 			Reception.MainReception.Info.setText(
 			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
 			Reception.MainReception.dialoghistory.removeAllElements();
