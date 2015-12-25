@@ -84,8 +84,8 @@
 	
 	<Customer>
 		<customerID>Cust_2</customerID>
-		<firsName>krishnadas</firsName>
-		<lastName>charankatbaiju</lastName>
+		<firsName>Krishnadas</firsName>
+		<lastName>Charankatbaiju</lastName>
 		<city>Oxford</city>
 		<street>James Street</street>
 		<housenumber>93</housenumber>
@@ -107,7 +107,7 @@
 	<Customer>
 		<customerID>Cust_4</customerID>
 		<firsName>Soheil</firsName>
-		<lastName>Emd</lastName>
+		<lastName>EMD</lastName>
 		<city>London</city>
 		<street>Bahman Road</street>
 		<housenumber>470</housenumber>
