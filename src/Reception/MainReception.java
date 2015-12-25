@@ -188,9 +188,9 @@ public class MainReception {
 		try {
 			
 			// Setting GUI Background Image
-    		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources\\BG.jpg")))));
+    		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources//BG.jpg")))));
     		// Setting GUI Window Icon 
-    		Main.setIconImage(ImageIO.read(new File("Resources\\Icon.png")));
+    		Main.setIconImage(ImageIO.read(new File("Resources//Icon.png")));
     		// Initial Menu Bar to Main Frame
     		Main.setJMenuBar(menuBar);
 		    
