@@ -543,7 +543,7 @@ public class Reasoner {
 		// Response - [Thank You] - Start
 		if (questiontype == "thanks") {
 			//This method gets username OS
-			String name = System.getenv("USERNAME");
+			String name = System.getProperty("user.name");
 			answer = ("Reception: You are very welcome " + name +" "+ greeting + ".");
 			Answered = 1;}
 		// Response - [Thank You] - Start
