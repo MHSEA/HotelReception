@@ -1,29 +1,29 @@
 package Reception;
-import static java.awt.GraphicsDevice.WindowTranslucency.*;
 import java.awt.*;
-import java.awt.Window.Type;
 import java.awt.event.*;
 import javax.imageio.*;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
-import javax.swing.UIManager;
+import java.net.URL;
+
 import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.html.StyleSheet;
 
 public class MainReception {
-
-	public JPanel Inframe, Outframe, Buttonframe;
+	
+	public static Vector<String> dialoghistory = new Vector<String>();
+	
 	public static JTextField Input;
 	public static JEditorPane Output,Info;
+	public static JScrollPane Scroll, ScrollInfo;
+	public JPanel Inframe, Outframe, Buttonframe;
 	public JLabel Inputlabel;
-	public static JScrollPane Scroll;
-	public static JScrollPane ScrollInfo;
 	public String dialogout = "";
-	public static Vector<String> dialoghistory = new Vector<String>();
 	public String displaytext = "";
 	public static String question = "";
 	public static String answer = "";
+	
+
 	Reasoner myReasoner;
 	
 	public MainReception() {               // Constructor for an Instance of SimpleGUI
@@ -49,7 +49,7 @@ public class MainReception {
 		Scroll.setBorder(null);
 		
 		Info = new JEditorPane("text/html","html string");	    
-		Info.setEditable(false);  	
+		Info.setEditable(false);
 		Info.setEditorKit(new HTMLEditorKit());
 		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
 		
@@ -71,15 +71,129 @@ public class MainReception {
 		Outframe.add(Scroll);
 		Outframe.add(ScrollInfo);		
 
-		JFrame Main = new JFrame("Hotel Reception");   // our main frame
+		// Main Frame
+		JFrame Main = new JFrame("Hotel Reception");   
 		
+		
+
+		      //create a menu bar
+		      final JMenuBar menuBar = new JMenuBar();
+
+		      // Create Menu - Start
+		      JMenu fileMenu = new JMenu("File"); 
+		      JMenu helpMenu = new JMenu("Help");
+		      JMenu linkMenu = new JMenu("Link");
+		      // Create Menu - End
+		      
+		      
+		      
+		      // Create Menu Items - Start
+		      JMenuItem saveMenuItem = new JMenuItem("Save");
+		      saveMenuItem.setActionCommand("Save");
+
+		      JMenuItem exitMenuItem = new JMenuItem("Exit");
+		      exitMenuItem.setActionCommand("Exit");
+
+		      JMenuItem aboutMenuItem = new JMenuItem("About");
+		      aboutMenuItem.setActionCommand("About");
+		      
+		      JMenuItem githubMenuItem = new JMenuItem("GitHub");
+		      githubMenuItem.setActionCommand("GitHub");
+		      // Create Menu Items - End
+		      
+		      
+		      
+		    // Menu Item Action Listeners - Start
+
+		      // Menu Bar - Help -> About - Start
+		      aboutMenuItem.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				    Component aboutFrame = null;
+				    
+				    JOptionPane.showMessageDialog(aboutFrame,
+				    "Middleware Programming" + "\nEJB Knowledge Based Systems" + "\n" +
+				    "\nMehdi Amerinia" +
+				    "\nMoafaq Jamal Ashshareef" +
+				    "\nKrishnadas charankatbaiju" +
+				    "\nSoheil Emadi" + "\n",
+				    "About",
+				    JOptionPane.QUESTION_MESSAGE); 
+				}
+			});
+		      // Menu Bar - Help -> About - End
+		      
+
+		      
+		      
+		      // Menu Bar - File -> Exit - Start
+		      exitMenuItem.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					System.exit(0);
+					
+				}
+			});
+		      // Menu Bar - File -> Exit - End
+		      
+		      
+		      
+		      // Menu Bat - Links -> GitHub - Start
+		      githubMenuItem.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					try {
+					    Desktop.getDesktop().browse(new URL("https://github.com/MHSEA/HotelReception").toURI());
+					} catch (Exception e1) {}
+					
+				}
+			});
+		      // Menu Bat - Links -> GitHub - Start
+		      
+		      
+
+		      // Menu Item Action Listeners - End
+		     
+
+		      // Add Menu Items to File Menu - Start
+		      fileMenu.add(saveMenuItem);
+		      fileMenu.addSeparator();
+		      fileMenu.add(exitMenuItem);
+		      // Add Menu Items to File Menu - End
+		      
+		      
+		      
+		      // Add Menu Items to Link Menu - Start
+		      linkMenu.add(githubMenuItem);
+		      // Add Menu Items to Link Menu - End
+		      
+		      
+		      
+		      // Add Menu Items to Help Menu - Start
+		      helpMenu.add(aboutMenuItem);
+		      // Add Menu Items to Help Menu - End		      
+		      
+
+		      
+		      // Add Menus to Menu Bar - Start
+		      menuBar.add(fileMenu);     
+		      menuBar.add(linkMenu);
+		      menuBar.add(helpMenu);  
+		      // Add Menus to Menu Bar - End
+   
+		   
+
+	      
 		try {
 			
 			// Setting GUI Background Image
     		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources\\BG.jpg")))));
     		// Setting GUI Window Icon 
     		Main.setIconImage(ImageIO.read(new File("Resources\\Icon.png")));
-
+    		// Initial Menu Bar to Main Frame
+    		Main.setJMenuBar(menuBar);
+		    
 
     	} catch (IOException e) {
     		e.printStackTrace();
@@ -103,7 +217,7 @@ public class MainReception {
 		});
 
 		Main.pack();
-		Main.setSize(1200, 800);
+		Main.setSize(1300, 800);
 		Main.setVisible(true);                               // Don't forget
 		
 		dialoghistory.add("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> " +
@@ -127,7 +241,6 @@ public class MainReception {
 	public void generateanswer() {                           // generate an answer
 
 		Vector<String> answers = new Vector<String>();
-				
 		answers = myReasoner.generateAnswer(question);
 	
 		displaytext = "<font color=\"red\" face=\"Verdana\">You: " + answers.get(0)+
@@ -171,5 +284,6 @@ public class MainReception {
 	public static void main(String[] args) {                 // main Method (starts when class/instance is called)
 		MainReception mygui = new MainReception();
 		mygui.checkbrain();                                  // check if brain is there and knowledge loaded
+		
 	}
 }
