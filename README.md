@@ -25,5 +25,5 @@ you need to download UML for your Eclipse to be able to see the diagram
 how to download it? its very easy 
 
 Help----> Install new software--------> type UML and download UML lab
-unfortunately the App is not free but you can still use it for 1 day as a trial version :D
+unfortunately the App is not free but you can still use it for 1 day as a trial version OR use ArgoUML :D
 have fun 
