@@ -575,7 +575,7 @@ public class Reasoner {
 			answer = "<br>" + "You can use following commands:  " + "<br>" + "---------------------------------------"
 					+ "<br>" + "Exit: Quit the program" + "<br>" + "CLS: Clear the screen" + "<br>" + "<br>" + "<br>"
 					+ "Also you can ask following questions:  " + "<br>" + "---------------------------------------"
-					+ "<br>" + "- where is the hotel" + "<br>" + "- I am looking for a double room" + "<br>"
+					+ "<br><h3 style=color:red;><font face=verdana>" + "- where is the hotel" + "</font></h1><br>" + "- I am looking for a double room" + "<br>"
 					+ "- What kind of rooms are available" + "<br>" + "- Where are the room locations" + "<br>"
 					+ "- How many rooms are available" + "<br>" + "- Can i book a room" + "<br>";
 			Answered = 1;
@@ -605,7 +605,7 @@ public class Reasoner {
 			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
 			Reception.MainReception.dialoghistory.removeAllElements();
 			Reception.MainReception.dialoghistory.add
-			("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
+			("<H2 style=color:red><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
 			+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
 			+ "Just ask me.</H3><br>"
 			+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
