@@ -575,9 +575,9 @@ public class Reasoner {
 			answer = "<br>" + "You can use following commands:  " + "<br>" + "---------------------------------------"
 					+ "<br>" + "Exit: Quit the program" + "<br>" + "CLS: Clear the screen" + "<br>" + "<br>" + "<br>"
 					+ "Also you can ask following questions:  " + "<br>" + "---------------------------------------"
-					+ "<br><h3 style=color:red;><font face=verdana>" + "- where is the hotel" + "</font></h1><br>" + "- I am looking for a double room" + "<br>"
-					+ "- What kind of rooms are available" + "<br>" + "- Where are the room locations" + "<br>"
-					+ "- How many rooms are available" + "<br>" + "- Can i book a room" + "<br>";
+					+ "<br>" + "- <font color=#191970 face = Georgia size = 5>Where is the hotel</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- I am looking for a double room</font>" + "<br>"
+					+ "- <font color=#191970  face = Georgia  size = 5>What kind of rooms are available</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- Where are the room locations</font>" + "<br>"
+					+ "- <font color=#191970  face = Georgia  size = 5>How many rooms are available</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- Can i book a room</font>" + "<br>";
 			Answered = 1;
 		}
 
