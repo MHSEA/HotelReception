@@ -572,12 +572,12 @@ public class Reasoner {
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
-			answer = "<br>" + "You can use following commands:  " + "<br>" + "---------------------------------------"
-					+ "<br>" + "Exit: Quit the program" + "<br>" + "CLS: Clear the screen" + "<br>" + "<br>" + "<br>"
-					+ "Also you can ask following questions:  " + "<br>" + "---------------------------------------"
-					+ "<br>" + "- <font color=#191970 face = Georgia size = 5>Where is the hotel</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- I am looking for a double room</font>" + "<br>"
-					+ "- <font color=#191970  face = Georgia  size = 5>What kind of rooms are available</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- Where are the room locations</font>" + "<br>"
-					+ "- <font color=#191970  face = Georgia  size = 5>How many rooms are available</font>" + "<br>" + "<font color=#191970  face = Georgia  size = 5>- Can i book a room</font>" + "<br>";
+			answer = "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>You can use following commands:  </font>" + "<br>" + "<font color=#2F4F4F  face = Impact>---------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#FF0000  face = Impact  size = 5>Exit: Quit the program</font>" + "<br>" + "<font color=#008000  face = Impact  size = 5>CLS: Clear the screen</font>" + "<br>" + "<br>" + "<br>"
+					+ "<font color=#2F4F4F  face = Impact  size = 5>Also you can ask following questions:  </font>" + "<br>" + "<font color=#2F4F4F  face = Impact>-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Helvetica size = 5 ><Strong>-Where is the hotel</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-I am looking for a double room</font></Strong>" + "<br>"
+					+ "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-What kind of rooms are available</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Where are the room locations</font></Strong>" + "<br>"
+					+ "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-How many rooms are available</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Can i book a room</font></Strong>" + "<br>";
 			Answered = 1;
 		}
 
