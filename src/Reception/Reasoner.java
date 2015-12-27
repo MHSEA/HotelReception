@@ -609,7 +609,7 @@ public class Reasoner {
 					+ "<br>" + "<font color=#008000  face = Roman  size = 5>Cls: Clear the screen</font>"
 					+ "<br>" + "<font color=#FF0000  face = Roman  size = 5>Exit: Quit the program</font>" 
 					+ "<br>" + "<br>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>Also you can ask following questions:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>Also you can ask following the questions:  </font>" 
 					+ "<br>" + "<font color=#2F4F4F  face = Roman>-------------------------------------------------------------------</font>"
 					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4 >-Where is the hotel</font>" 
 					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-I am looking for a double room</font>" 
