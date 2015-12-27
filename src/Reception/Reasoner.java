@@ -143,6 +143,7 @@ public class Reasoner {
 		
 			// Add synonyms for Booking - Start
 			BookingSyn.add("bookings");
+			BookingSyn.add("booking");
 			BookingSyn.add("booked");
 			// Add synonyms for Booking - End
 			
@@ -518,18 +519,26 @@ public class Reasoner {
 			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Customer")){
 			    JPasswordField pwd = new JPasswordField(10);
 			    JOptionPane.showConfirmDialog(null, pwd,"Restricted Area - Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
-			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
+			    if (new String(pwd.getPassword()).equals("HRAdmin22")) {
 		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
+			} else {
+				JOptionPane.showMessageDialog(null,"Wrong Password!","Error",JOptionPane.WARNING_MESSAGE);
+	        	Answered = 1;
+				}
 			}
 	        
 		       
-			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Booking") && input.contains("hradmin22")){
+			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Booking")){
 			    JPasswordField pwd = new JPasswordField(10);
 			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
-			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
+			    if (new String(pwd.getPassword()).equals("HRAdmin22")) {
 		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
+			    }else {
+			    	JOptionPane.showMessageDialog(null,"Wrong Password!","Error",JOptionPane.WARNING_MESSAGE);
+			        Answered = 1;
+					}
 			}
 		//Response - [List of Customers, Bookings, Admin ONLY] - End
 		
