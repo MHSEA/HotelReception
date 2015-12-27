@@ -575,7 +575,7 @@ public class Reasoner {
 		if (questiontype == "thanks") {
 			//This method gets username OS
 			String name = System.getProperty("user.name");
-			answer = ("Reception: You are very welcome " + name +" "+ greeting + ".");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: You are very welcome " + name +" "+ greeting + "." +"</font>");
 			Answered = 1;}
 		// Response - [Thank You] - Start
 		
@@ -603,26 +603,26 @@ public class Reasoner {
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
-			answer = "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>You can use following commands:  </font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Impact>---------------------------------------------------------------</font>"
-					+ "<br>" + "<font color=#008000  face = Impact  size = 5>Save: Save the conversation to the Desktop</font>"
-					+ "<br>" + "<font color=#008000  face = Impact  size = 5>cls: Clear the screen</font>"
-					+ "<br>" + "<font color=#FF0000  face = Impact  size = 5>Exit: Quit the program</font>" 
+			answer = "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>You can use following commands:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman>-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#330066  face = Roman  size = 5>Save: Save the conversation to the Desktop</font>"
+					+ "<br>" + "<font color=#008000  face = Roman  size = 5>Cls: Clear the screen</font>"
+					+ "<br>" + "<font color=#FF0000  face = Roman  size = 5>Exit: Quit the program</font>" 
 					+ "<br>" + "<br>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>Also you can ask following questions:  </font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Impact>-------------------------------------------------------------------</font>"
-					+ "<br>" + "<font color=#2F4F4F  face = Helvetica size = 5 ><Strong>-Where is the hotel</font></Strong>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-I am looking for a double room</font></Strong>" 
-					+ "<br>" + "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-What kind of rooms are available</font></Strong>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Where are the room locations</font></Strong>" 
-					+ "<br>" + "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-How many rooms are available</font></Strong>"
-					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Can i book a room</font></Strong>" + "<br>";
+					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>Also you can ask following questions:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman>-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4 >-Where is the hotel</font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-I am looking for a double room</font>" 
+					+ "<br>" + "<font color=#2F4F4F   face = Roman  size = 4>-What kind of rooms are available</font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-Where are the room locations</font>" 
+					+ "<br>" + "<font color=#2F4F4F   face = Roman  size = 4>-How many rooms are available</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-Can i book a room</font>" + "<br>";
 			
 			Answered = 1;
 		}
 
 		if (questiontype == "?") {
-			answer = ("You can type: ");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>You can type:</font> ");
 			Answered = 1;
 			}
 		// Response - [Help] - End
@@ -641,7 +641,7 @@ public class Reasoner {
 			String desktop = System.getProperty ("user.home") + "\\Desktop\\";
 			Console.saveToFile();
 			Console.Confirmation("Outputhas been successfully saved to:\n" + desktop + "Reception-Output.html");
-			answer = ("Reception: Saved");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: Saved</font>");
 			
 			Answered = 1;
 			
@@ -655,13 +655,13 @@ public class Reasoner {
 		{
 			
 			Reception.MainReception.Info.setText(
-			"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
+			"<font color=#2F4F4F  face = Roman  size = 4>Background information about the conversations topic will be displayed in this window.</font>");
 			Reception.MainReception.dialoghistory.removeAllElements();
 			Reception.MainReception.dialoghistory.add
-			("<H2 style=color:red><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
-			+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
+			("<font color=#2F4F4F  face = Roman  size = 5>>Welcome to the Hotel Reception Helpdesk, please type your question.</font> "
+			+ "<font color=#2F4F4F  face = Roman  size = 5>Following services are available: Available Rooms, Bookings, Checkin and Checkouts,</font> "
 			+ "Just ask me.</H3><br>"
-			+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
+			+ "<font color=#2F4F4F  face = Roman  size = 4>To Start, you can type help to explore more. </font><br>");
 			Answered = 1;
 		}
 		// Response - [CLS] - End
@@ -670,8 +670,8 @@ public class Reasoner {
 		
 		// Response - [Null] - [Start]
 		if (Answered == 0) {
-			answer = ("Reception: Sorry I didn't understand that." + "<br> " +
-					  "You can type [ Help ] for more information and list of commands.");
+			answer = ("<font color=#e60000  face = Roman  size = 5>Reception: Sorry I didn't understand that.</font>" + "<br> " +
+					  "<font color=#e60000  face = Roman  size = 5>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
 			}
 		// Response - [Null] - [End]
 		
@@ -737,9 +737,9 @@ public class Reasoner {
 		}
 		if (available) 
 		{
-			answer = "There are rooms available to book";
+			answer = "<font color=#2F4F4F  face = Roman  size = 5>There are rooms available to book</font>";
 		} else {
-			answer = "Sorry, Mentioned room type is fully booked.";
+			answer = "<font color=#e60000  face = Roman  size = 5>Sorry, Mentioned room type is fully booked.";
 		}
 		// Check if the room is booked or not - End
 		
@@ -828,10 +828,10 @@ public class Reasoner {
 
 		Vector<String> yesorno = new Vector<String>();
 		if (classtype.isEmpty()) {
-			yesorno.add("Sorry I didn't understand that." + "<br> "
-					+ "You can type [ Help ] for more information and list of commands.");
+			yesorno.add("<font color=#e60000  face = Roman  size = 4>Sorry I didn't understand that.</font>" + "<br> "
+					+ "<font color=#e60000  face = Roman  size = 4>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
 		} else {
-			yesorno.add("Requested Room is not available. " + classtype.get(0).getClass().getSimpleName());
+			yesorno.add("<font color=#2F4F4F  face = Roman  size = 4>Requested Room is not available.</font> " + classtype.get(0).getClass().getSimpleName());
 		}
 
 		Integer counter = 0;
@@ -841,7 +841,7 @@ public class Reasoner {
 				if (input.contains(curbook.gettype().toLowerCase()))
 						{
 					counter = i;
-					yesorno.set(0, "Requested Room is Available."); 
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Requested Room is Available.<font color=#2F4F4F  face = Roman  size = 5>"); 
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1; // force break
 				}
@@ -854,7 +854,7 @@ public class Reasoner {
 						|| input.contains(curmem.getlastName().toLowerCase())
 						|| input.contains(curmem.getCity().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we do have such a Customer");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we do have such a Customer</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -865,7 +865,7 @@ public class Reasoner {
 				Amenity curcat = (Amenity) thelist.get(i);
 				if (input.contains(curcat.getName().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we have such a Amenity");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we have such a Amenity</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -877,14 +877,14 @@ public class Reasoner {
 				if (input.contains(curlend.getbookingID().toLowerCase())
 						|| input.contains(curlend.getcustomerID().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "Yes we have such a Booking");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we have such a Booking</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
 			}
 		}
 		if (classtype.isEmpty()) {
-			Console.Println("Not class type given.");
+			Console.Println("<font color=#2F4F4F  face = Roman  size = 4>Not class type given.</font>");
 		} else {
 			URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 					+ classtype.get(0).getClass().getSimpleName().toLowerCase();
@@ -1057,7 +1057,7 @@ public class Reasoner {
 		try {
 			BufferedReader readit = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
 			String lineread = readit.readLine();
-			Console.Println("Reader okay");
+			Console.Println("<font color=#2F4F4F  face = Roman  size = 5>Reader okay</font>");
 			while (lineread != null) {
 				webtext = webtext + lineread;
 				lineread = readit.readLine();
@@ -1067,8 +1067,8 @@ public class Reasoner {
 			webtext = "<table width=\"700\"><tr><td>" + webtext + "</ul></td></tr></table>";
 
 		} catch (Exception e) {
-			webtext = "Not yet";
-			Console.Println("Error connecting to wordnet");
+			webtext = "<font color=#2F4F4F  face = Roman  size = 5>Not yet</font>";
+			Console.Println("<font color=#2F4F4F  face = Roman  size = 5>Error connecting to wordnet</font>");
 		}
 		return webtext;
 	}
