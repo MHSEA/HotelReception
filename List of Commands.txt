@@ -8,6 +8,7 @@ thanks
 bye
 help
 ?
+save
 
 where is the hotel
 How many rooms are available
