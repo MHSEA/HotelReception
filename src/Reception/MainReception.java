@@ -107,24 +107,27 @@ public class MainReception {
 		      
 		    // Menu Item Action Listeners - Start
 
+		      
+		      saveMenuItem.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					String desktop = System.getProperty ("user.home") + "\\Desktop\\";
+					Console.saveToFile();
+					Console.Confirmation("Outputhas been successfully saved to:\n" + desktop + "Reception-Output.html");					
+					
+				}
+			});
+		      
+		      
 		      // Menu Bar - Help -> About - Start
 		      aboutMenuItem.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-				    Component aboutFrame = null;
-				    final ImageIcon icon = new ImageIcon("Resources//icon.png");
-				    JOptionPane.showMessageDialog(aboutFrame,
-				    "Hotel Reception" + "\n" +
-				    "Knowledge Based Systems" + "\n" +
-				    "University of West London" + "\n" +
-				    "\nMehdi Amerinia" +
-				    "\nMoafaq Jamal Ashshareef" +
-				    "\nKrishnadas charankatbaiju" +
-				    "\nSoheil Emadi" + "\n",
-				    "About",
-				    JOptionPane.QUESTION_MESSAGE, icon);
+					Console.about();
 				}
-			});
+		      });
 		      // Menu Bar - Help -> About - End
 		      
 
@@ -232,11 +235,22 @@ public class MainReception {
 		Input.requestFocusInWindow();
 	}                                                        // Constructor done
 
+	// Validating the reasoner's Database - Start
 	public void checkbrain() {
-		String yo = myReasoner.testit();                     // Testing the reasoner's knowledge
-		System.out.println(yo);                              // Testing the reasoner's knowledge
+		String validateCustomer = myReasoner.validateCustomer();           
+		Console.Print(validateCustomer);                    
+		
+		String validateroom = myReasoner.validateRoom();       
+		Console.Print(validateroom);
+		
+		String validatebookings = myReasoner.validateBookings();   
+		Console.Print(validatebookings);
+		
+		String validateAmenities = myReasoner.validateAmenities();  
+		Console.Print(validateAmenities);
+		
 	}
-
+	// Validating the reasoner's Database - End
 	public void questionasked() {                            // log questions in a String vector
 		question = Input.getText();
 		generateanswer();

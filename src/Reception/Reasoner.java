@@ -165,13 +165,13 @@ public class Reasoner {
 				theBookingList = reception.getBooking();
 				// Force it to be a List,
 				hotelList.add(reception);
-				System.out.println("List reading");
+				Console.Println("Validating XML Database...\n");
 			}
 
 		catch (Exception e) 
 			{
 				e.printStackTrace();
-				System.out.println("error in init");
+				Console.Println("error in init");
 			}
 	}
 	// Load Hotel database from DataBase.xml File - End
@@ -298,7 +298,7 @@ public class Reasoner {
 				|| input.contains("way to"))
 		{
 			questiontype = "location";
-			System.out.println("Find Location");
+			Console.Println("Finding Location");
 		}
 		// Question Type Validation - End
 		
@@ -315,7 +315,7 @@ public class Reasoner {
 				|| input.contains("i want to book"))
 		{
 			questiontype = "intent";
-			System.out.println("Find BookAvailability");
+			Console.Println("Find Room Availability");
 		}
 		// Commands - [Can i] - End
 
@@ -328,7 +328,7 @@ public class Reasoner {
 				|| input.contains("cool thank")) 
 		{
 			questiontype = "thanks";
-			System.out.println("thanks");
+			Console.Println("Thank you Message");
 		}
 		// Commands - [Thank you] - End
 
@@ -339,7 +339,7 @@ public class Reasoner {
 				|| input.contains("hey")) 
 		{
 			questiontype = "hi";
-			System.out.println("hi");
+			Console.Println("Hello Message");
 		}
 		// Commands - [Hi] - End
 		
@@ -349,7 +349,7 @@ public class Reasoner {
 				|| input.contains("good buy")) 
 		{
 			questiontype = "bye";
-			System.out.println("bye");
+			Console.Println("Bye Message");
 		}
 		// Commands - [Bye] - End
 		
@@ -360,7 +360,7 @@ public class Reasoner {
 				|| input.equalsIgnoreCase(questionmark)) 
 		{
 			questiontype = "Help";
-			System.out.println("Help");
+			Console.Println("Help Message");
 		}
 		// Commands - [Help] - End
 		
@@ -372,7 +372,7 @@ public class Reasoner {
 				|| input.contains("Exit")) 
 		{
 			questiontype = "Exit";
-			System.out.println("Exit");
+			Console.Println("Exit");
 		}
 		// Commands - [Exit] - End
 
@@ -382,10 +382,22 @@ public class Reasoner {
 		if (input.contains("cls") 
 				|| input.contains("clean")) {
 			questiontype = "CLS";
-			System.out.println("CLS");
+			Console.Println("Clear Screen");
 		}
 		// Commands - [CLS] - End
 
+		
+		
+		// Commands - [save] - Start
+		String save = ("save");
+		if (input.equals(save)) 
+		{
+			questiontype = "save";
+			Console.Println("Save output");
+		}
+		// Commands - [save] - End
+		
+		
 		
 		
 		// Check - [Command Subject] - Start
@@ -394,7 +406,7 @@ public class Reasoner {
 				classtype = theRoomList;
 				input = input.replace(RoomSyn.get(x), "<b>" + RoomSyn.get(x) + "</b>");
 				subjectcounter = 1;
-				System.out.println("Class type Room recognised.");
+				Console.Println("Class type Room recognised.");
 			}
 		}
 		
@@ -403,7 +415,7 @@ public class Reasoner {
 				classtype = theCustomerList;
 				input = input.replace(CustomerSyn.get(x), "<b>" + CustomerSyn.get(x) + "</b>");
 				subjectcounter = 1;
-				System.out.println("Class type Cutomer recognised.");
+				Console.Println("Class type Cutomer recognised.");
 			}
 		}
 		
@@ -412,7 +424,7 @@ public class Reasoner {
 				classtype = theAmenityList;
 				input = input.replace(AmenitySyn.get(x), "<b>" + AmenitySyn.get(x) + "</b>");
 				subjectcounter = 1;
-				System.out.println("Class type Amenity recognised.");
+				Console.Println("Class type Amenity recognised.");
 			}
 		}
 		
@@ -421,7 +433,7 @@ public class Reasoner {
 				classtype = theBookingList;
 				input = input.replace(BookingSyn.get(x), "<b>" + BookingSyn.get(x) + "</b>");
 				subjectcounter = 1;
-				System.out.println("Class type Booking recognised.");
+				Console.Println("Class type Booking recognised.");
 			}
 		}
 
@@ -431,7 +443,7 @@ public class Reasoner {
 					classtype = theRecentThing;
 					input = input.replace(RecentObjectSyn.get(x), "<b>" + RecentObjectSyn.get(x) + "</b>");
 					subjectcounter = 1;
-					System.out.println("Class type recognised as" + RecentObjectSyn.get(x));
+					Console.Println("Class type recognised as" + RecentObjectSyn.get(x));
 				}
 			}
 		}
@@ -440,14 +452,14 @@ public class Reasoner {
 
 	
 		// Check - [Command Subject (More than one Subject)] - Start
-		System.out.println("subjectcounter = " + subjectcounter);
+		Console.Println("subjectcounter = " + subjectcounter);
 
 		for (int x = 0; x < HotelSyn.size(); x++) {
 			if (input.contains(HotelSyn.get(x))) {
 				if (subjectcounter == 0) {
 					input = input.replace(HotelSyn.get(x), "<b>" + HotelSyn.get(x) + "</b>");
 					classtype = hotelList;
-					System.out.println("class type Hotel recognised");
+					Console.Println("class type Hotel recognised");
 				}
 			}
 		}
@@ -511,8 +523,8 @@ public class Reasoner {
 			Answered = 1; // An answer was given
 			if (check.size() > 1) {
 				Currentitemofinterest = classtype.get(Integer.valueOf(check.get(1)));
-				System.out.println("Classtype List = " + classtype.getClass().getSimpleName());
-				System.out.println("Index in Liste = " + Integer.valueOf(check.get(1)));
+				Console.Println("Classtype List = " + classtype.getClass().getSimpleName());
+				Console.Println("Index in Liste = " + Integer.valueOf(check.get(1)));
 				Currentindex = Integer.valueOf(check.get(1));
 				theRecentThing.clear(); // Clear it before adding (changing) the
 				// now recent thing
@@ -571,12 +583,21 @@ public class Reasoner {
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
-			answer = "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>You can use following commands:  </font>" + "<br>" + "<font color=#2F4F4F  face = Impact>---------------------------------------------------------------</font>"
-					+ "<br>" + "<font color=#FF0000  face = Impact  size = 5>Exit: Quit the program</font>" + "<br>" + "<font color=#008000  face = Impact  size = 5>CLS: Clear the screen</font>" + "<br>" + "<br>" + "<br>"
-					+ "<font color=#2F4F4F  face = Impact  size = 5>Also you can ask following questions:  </font>" + "<br>" + "<font color=#2F4F4F  face = Impact>-------------------------------------------------------------------</font>"
-					+ "<br>" + "<font color=#2F4F4F  face = Helvetica size = 5 ><Strong>-Where is the hotel</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-I am looking for a double room</font></Strong>" + "<br>"
-					+ "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-What kind of rooms are available</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Where are the room locations</font></Strong>" + "<br>"
-					+ "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-How many rooms are available</font></Strong>" + "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Can i book a room</font></Strong>" + "<br>";
+			answer = "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>You can use following commands:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Impact>---------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#008000  face = Impact  size = 5>Save: Save the conversation to the Desktop</font>"
+					+ "<br>" + "<font color=#008000  face = Impact  size = 5>cls: Clear the screen</font>"
+					+ "<br>" + "<font color=#FF0000  face = Impact  size = 5>Exit: Quit the program</font>" 
+					+ "<br>" + "<br>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Impact  size = 5>Also you can ask following questions:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Impact>-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Helvetica size = 5 ><Strong>-Where is the hotel</font></Strong>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-I am looking for a double room</font></Strong>" 
+					+ "<br>" + "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-What kind of rooms are available</font></Strong>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Where are the room locations</font></Strong>" 
+					+ "<br>" + "<font color=#2F4F4F   face = Helvetica  size = 5><Strong>-How many rooms are available</font></Strong>"
+					+ "<br>" + "<font color=#2F4F4F  face = Helvetica  size = 5><Strong>-Can i book a room</font></Strong>" + "<br>";
+			
 			Answered = 1;
 		}
 
@@ -593,6 +614,19 @@ public class Reasoner {
 			System.exit(0);}
 		// Response - [Exit] - End
 
+		
+		
+		// Response - [Save] - Start
+		if (questiontype == "save") {
+			String desktop = System.getProperty ("user.home") + "\\Desktop\\";
+			Console.saveToFile();
+			Console.Confirmation("Outputhas been successfully saved to:\n" + desktop + "Reception-Output.html");
+			answer = ("Reception: Saved");
+			
+			Answered = 1;
+			
+		}
+		// Response - [Save] - End
 		
 		
 		
@@ -694,7 +728,7 @@ public class Reasoner {
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-		System.out.println("URL = " + URL);
+		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
@@ -712,7 +746,7 @@ public class Reasoner {
 
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=";
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-		System.out.println("URL = " + URL);
+		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
@@ -758,7 +792,7 @@ public class Reasoner {
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-		System.out.println("URL = " + URL);
+		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
@@ -830,12 +864,12 @@ public class Reasoner {
 			}
 		}
 		if (classtype.isEmpty()) {
-			System.out.println("Not class type given.");
+			Console.Println("Not class type given.");
 		} else {
 			URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 					+ classtype.get(0).getClass().getSimpleName().toLowerCase();
 			URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-			System.out.println("URL = " + URL);
+			Console.Println("URL = " + URL);
 			tooltipstring = readwebsite(URL);
 			String html = "<html>" + tooltipstring + "</html>";
 			Myface.setmytooltip(html);
@@ -937,7 +971,7 @@ public class Reasoner {
 		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
 				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
 		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
-		System.out.println("URL = " + URL);
+		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
@@ -950,9 +984,9 @@ public class Reasoner {
 	
 	
 	// Validation - Number of Rooms - Start
-	public String testit() { 
+	public String validateRoom() { 
 		String answer = "";
-		System.out.println("room List = " + theRoomList.size());
+		Console.Println("Room List = " + theRoomList.size() + " Items");
 		for (int i = 0; i < theRoomList.size(); i++) {
 			Room curbook = (Room) theRoomList.get(i); 
 		}
@@ -961,6 +995,41 @@ public class Reasoner {
 	// Validation - Number of Rooms - End
 	
 	
+	// Validation - Number of Customers - Start
+	public String validateCustomer() { 
+		String answer = "";
+		Console.Println("Customer List = " + theCustomerList.size() + " Items");
+		for (int i = 0; i < theCustomerList.size(); i++) {
+			Customer curbook = (Customer) theCustomerList.get(i); 
+		}
+		return answer;
+	}
+	// Validation - Number of Customers - End
+	
+	
+	// Validation - Number of Bookings - Start
+	public String validateBookings() { 
+		String answer = "";
+		Console.Println("Booking List = " + theBookingList.size() + " Items");
+		for (int i = 0; i < theBookingList.size(); i++) {
+			Booking curbook = (Booking) theBookingList.get(i); 
+		}
+		return answer;
+	}
+	// Validation - Number of Bookings - End
+	
+	
+	// Validation - Number of Amenities - Start
+	public String validateAmenities() { 
+		String answer = "";
+		Console.Println("Amenity List = " + theAmenityList.size() + " Items");
+		for (int i = 0; i < theAmenityList.size(); i++) {
+			Amenity curbook = (Amenity) theAmenityList.get(i); 
+		}
+		return answer;
+	}
+	// Validation - Number of Amenities - End
+	
 	
 	// Reading the web sites - Start
 	public static String readwebsite(String url) {
@@ -968,7 +1037,7 @@ public class Reasoner {
 		try {
 			BufferedReader readit = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
 			String lineread = readit.readLine();
-			System.out.println("Reader okay");
+			Console.Println("Reader okay");
 			while (lineread != null) {
 				webtext = webtext + lineread;
 				lineread = readit.readLine();
@@ -979,7 +1048,7 @@ public class Reasoner {
 
 		} catch (Exception e) {
 			webtext = "Not yet";
-			System.out.println("Error connecting to wordnet");
+			Console.Println("Error connecting to wordnet");
 		}
 		return webtext;
 	}
