@@ -55,8 +55,7 @@ public class Reasoner {
 	// Last index used
 	public Integer Currentindex;
 	public String tooltipstring = "";
-	public String URL = "";  // URL for Wordnet site
-	public String URL2 = ""; // URL for Wikipedia entry
+	public String URL = "";  // URL for showing Hotel info
 
 	
 	// Constructor - Start
@@ -754,14 +753,13 @@ public class Reasoner {
 		
 		
 		
-		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
-				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
+		
+		URL = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
-		Myface.setmyinfobox(URL2);
+		Myface.setmyinfobox(URL);
 
 		return (answer);
 
@@ -773,13 +771,13 @@ public class Reasoner {
 	// Response Web Area - [Type of Rooms] - Start
 	public Integer Count(List thelist) { 
 
-		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s=";
-		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
+		
+		URL = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
-		Myface.setmyinfobox(URL2);
+		Myface.setmyinfobox(URL);
 
 		return thelist.size();
 	}
@@ -818,14 +816,13 @@ public class Reasoner {
 		}
 		listemall += "</ul>";
 
-		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
-				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
+	
+		URL = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
-		Myface.setmyinfobox(URL2);
+		Myface.setmyinfobox(URL);
 		return listemall;
 	}
 	// Response - "What kind of..." - End
@@ -895,14 +892,12 @@ public class Reasoner {
 		if (classtype.isEmpty()) {
 			Console.Println("<font color=#2F4F4F  face = Roman  size = 4>Not class type given.</font>");
 		} else {
-			URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
-					+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-			URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
+			URL = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 			Console.Println("URL = " + URL);
 			tooltipstring = readwebsite(URL);
 			String html = "<html>" + tooltipstring + "</html>";
 			Myface.setmytooltip(html);
-			Myface.setmyinfobox(URL2);
+			Myface.setmyinfobox(URL);
 		}
 		return yesorno;
 	}
@@ -997,14 +992,13 @@ public class Reasoner {
 			// Print Hotel Address - End
 			
 			
-		URL = "http://wordnetweb.princeton.edu/perl/webwn?o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&s="
-				+ classtype.get(0).getClass().getSimpleName().toLowerCase();
-		URL2 = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
+		
+		URL = "https://soc.uwl.ac.uk/~21240951/Hotel_Reception/" + classtype.get(0).getClass().getSimpleName().toLowerCase() + ".html";
 		Console.Println("URL = " + URL);
 		tooltipstring = readwebsite(URL);
 		String html = "<html>" + tooltipstring + "</html>";
 		Myface.setmytooltip(html);
-		Myface.setmyinfobox(URL2);
+		Myface.setmyinfobox(URL);
 
 		return location;
 	}
