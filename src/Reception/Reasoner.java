@@ -517,7 +517,7 @@ public class Reasoner {
 		// Response - [List of Customers, Bookings, Admin ONLY] - Start				
 			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Customer")){
 			    JPasswordField pwd = new JPasswordField(10);
-			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
+			    JOptionPane.showConfirmDialog(null, pwd,"Restricted Area - Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
 			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
 		        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
 		    		Answered = 1;
