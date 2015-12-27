@@ -4,7 +4,7 @@ import java.awt.Component;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+import Reception.MainReception;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -70,9 +70,8 @@ public class Console {
 	// Method For Menu Help -> About - Start
 	public static void about() 
 	{
-    Component aboutFrame = null;
     final ImageIcon icon = new ImageIcon("Resources//icon.png");
-    JOptionPane.showMessageDialog(aboutFrame,
+    JOptionPane.showMessageDialog(null,
     "Hotel Reception" + "\n" +
     "Knowledge Based Systems" + "\n" +
     "University of West London" + "\n" +
