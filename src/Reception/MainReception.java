@@ -9,6 +9,8 @@ import java.net.URL;
 
 import javax.swing.text.html.HTMLEditorKit;
 
+import sun.security.action.GetBooleanSecurityPropertyAction;
+
 public class MainReception {
 	
 	public static Vector<String> dialoghistory = new Vector<String>();
@@ -110,15 +112,17 @@ public class MainReception {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 				    Component aboutFrame = null;
-				    
+				    final ImageIcon icon = new ImageIcon("Resources//icon.png");
 				    JOptionPane.showMessageDialog(aboutFrame,
-				    "Middleware Programming" + "\nEJB Knowledge Based Systems" + "\n" +
+				    "Hotel Reception" + "\n" +
+				    "Knowledge Based Systems" + "\n" +
+				    "University of West London" + "\n" +
 				    "\nMehdi Amerinia" +
 				    "\nMoafaq Jamal Ashshareef" +
 				    "\nKrishnadas charankatbaiju" +
 				    "\nSoheil Emadi" + "\n",
 				    "About",
-				    JOptionPane.QUESTION_MESSAGE); 
+				    JOptionPane.QUESTION_MESSAGE, icon);
 				}
 			});
 		      // Menu Bar - Help -> About - End
