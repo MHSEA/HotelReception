@@ -4,20 +4,24 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+
 public class Reasoner {
 // Main Class - Start
-
+	
 	public Hotel reception;
 	public MainReception Myface;
 
 
 	// The lists holding the class instances of all domain entities - Start
-	public List hotelList = new ArrayList();
+	public List theHotelList = new ArrayList();
 	public List theRoomList = new ArrayList();
-	public List theCustomerList = new ArrayList();
 	public List theAmenityList = new ArrayList();
-	public List theBookingList = new ArrayList();
 	public List theRecentThing = new ArrayList();
+	public List theBookingList = new ArrayList();
+	public List theCustomerList = new ArrayList();
 	public List help = new ArrayList();
     // The lists holding the class instances of all domain entities - End
 	
@@ -65,10 +69,11 @@ public class Reasoner {
 	// Load Hotel database from DataBase.xml File - Start
 	public void initknowledge() 
 		{
+		
 			JAXB_XMLParser xmlhandler = new JAXB_XMLParser();
 			// Loading XML file
 			File xmlfiletoload = new File("DataBase.xml"); 
-
+			
 		// Synonyms - Start
 			
 			// Add synonyms for Hotel - Start
@@ -78,6 +83,7 @@ public class Reasoner {
 			HotelSyn.add("hotels");
 			HotelSyn.add("rception");
 			// Add synonyms for Hotel - End
+			
 			
 			
 			// Add synonyms for Room - Start
@@ -160,11 +166,16 @@ public class Reasoner {
 
 				// Fill the list from generated XML file
 				theRoomList = reception.getRoom();
-				theCustomerList = reception.getCustomer();
 				theAmenityList = reception.getAmenity();
+				theCustomerList = reception.getCustomer();
 				theBookingList = reception.getBooking();
 				// Force it to be a List,
-				hotelList.add(reception);
+				theHotelList.add(reception);
+	
+
+				
+
+
 				Console.Println("Validating XML Database...\n");
 			}
 
@@ -181,7 +192,7 @@ public class Reasoner {
 	// Generate an Answer - Start
 	public Vector<String> generateAnswer(String input)
 	{
-      
+	    final ImageIcon icon = new ImageIcon("Resources//Login.png");
         
         // Method to get the time of day and return the correct greeting for Thank you Command - Start
 		Calendar c = Calendar.getInstance();
@@ -458,7 +469,7 @@ public class Reasoner {
 			if (input.contains(HotelSyn.get(x))) {
 				if (subjectcounter == 0) {
 					input = input.replace(HotelSyn.get(x), "<b>" + HotelSyn.get(x) + "</b>");
-					classtype = hotelList;
+					classtype = theHotelList;
 					Console.Println("class type Hotel recognised");
 				}
 			}
@@ -491,27 +502,36 @@ public class Reasoner {
 
 		
 		
-	        
-		// Response - [List of Rooms, Amenities, Admin ONLY] - Start	        
-		if (questiontype == "list"){
-	        //if(input.contains("hradmin22")){
-	        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+		// Response - [List of Rooms, Amenities] - Start	
+			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Amenity")){
+				answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
 	    		Answered = 1;}
-//	        } 
-//	        else
-//	        {
-//	        	//this code act as CLS (clear screen)
-//	    		Reception.MainReception.Info.setText(
-//	    				"<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
-//	    				Reception.MainReception.dialoghistory.removeAllElements();
-//	    				Reception.MainReception.dialoghistory.add
-//	    				("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> "
-//	    				+ "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, "
-//	    				+ "Just ask me.</H3><br>"
-//	    				+ "<H3><font face=\"Verdana\">To Start, you can type help to explore more. </H3><br>");
-//	    				Answered = 1;
-//	        }
-		//Response - [List of Rooms, Amenities, Admin ONLY] - End
+			
+			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Room")){
+				answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+				Answered = 1;}
+		// Response - [List of Rooms, Amenities] - End	
+			
+			
+		
+		// Response - [List of Customers, Bookings, Admin ONLY] - Start				
+			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Customer")){
+			    JPasswordField pwd = new JPasswordField(10);
+			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
+			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
+		        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+		    		Answered = 1;
+			}
+	        
+		       
+			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Booking") && input.contains("hradmin22")){
+			    JPasswordField pwd = new JPasswordField(10);
+			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
+			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
+		        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+		    		Answered = 1;
+			}
+		//Response - [List of Customers, Bookings, Admin ONLY] - End
 		
 		
 		
@@ -961,7 +981,7 @@ public class Reasoner {
 			
 			
 			// Print Hotel Address - Start
-			if (thelist == hotelList) {
+			if (thelist == theHotelList) {
 				location = (" at" + "<br>" + reception.getHousenumber() +""+ reception.getStreet() + reception.getCity() + "" +reception
 						.getPostcode() + "<br>" + reception.getTel());
 			}
