@@ -52,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
     "postcode",
     "tel",
     "room",
-    "Customer",
     "Amenity",
+    "Customer",
     "Booking"
 })
 public class Hotel {
@@ -72,10 +72,10 @@ public class Hotel {
     protected String tel;
     @XmlElement(name = "Room", required = true)
     protected List<Room> room;
-    @XmlElement(name = "Customer", required = true)
-    protected List<Customer> Customer;
     @XmlElement(name = "Amenity", required = true)
     protected List<Amenity> Amenity;
+    @XmlElement(name = "Customer", required = true)
+    protected List<Customer> Customer;
     @XmlElement(name = "Booking", required = true)
     protected List<Booking> Booking;
 
@@ -260,6 +260,34 @@ public class Hotel {
     }
 
     /**
+     * Gets the value of the Amenity property.
+     * 
+     * <p>
+     * This getter method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the Amenity property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAmenity().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Amenity }
+     * 
+     * 
+     */
+    public List<Amenity> getAmenity() {
+        if (Amenity == null) {
+            Amenity = new ArrayList<Amenity>();
+        }
+        return this.Amenity;
+    }
+    /**
      * Gets the value of the Customer property.
      * 
      * <p>
@@ -288,34 +316,6 @@ public class Hotel {
         return this.Customer;
     }
 
-    /**
-     * Gets the value of the Amenity property.
-     * 
-     * <p>
-     * This getter method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the Amenity property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAmenity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Amenity }
-     * 
-     * 
-     */
-    public List<Amenity> getAmenity() {
-        if (Amenity == null) {
-            Amenity = new ArrayList<Amenity>();
-        }
-        return this.Amenity;
-    }
 
     /**
      * Gets the value of the Booking property.
