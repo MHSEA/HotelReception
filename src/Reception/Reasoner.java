@@ -483,7 +483,7 @@ public class Reasoner {
 		if (questiontype == "amount" + "booked") 
 		{
 			Integer numberof = Count(classtype);
-			answer = ("Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available"+"</font>");
 			Answered = 1;
 		}
 		// Response - [Number of Rooms, Bookings, ...] - End
@@ -495,7 +495,7 @@ public class Reasoner {
 		if (questiontype == "amount") 
 		{
 			Integer numberof = Count(classtype);
-			answer = ("Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: There are " + numberof + " "+ classtype.get(0).getClass().getSimpleName() + "s " + "Available"+"</font>");
 			Answered = 1;
 		}
 		// Response - [Number of Rooms, Bookings, ...] - End
@@ -504,11 +504,11 @@ public class Reasoner {
 		
 		// Response - [List of Rooms, Amenities] - Start	
 			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Amenity")){
-				answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+				answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype)+"</font>";
 	    		Answered = 1;}
 			
 			if (questiontype == "list" && classtype.get(0).getClass().getSimpleName().equals("Room")){
-				answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+				answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype)+"</font>";
 				Answered = 1;}
 		// Response - [List of Rooms, Amenities] - End	
 			
@@ -519,7 +519,7 @@ public class Reasoner {
 			    JPasswordField pwd = new JPasswordField(10);
 			    JOptionPane.showConfirmDialog(null, pwd,"Restricted Area - Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
 			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
-		        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
 			}
 	        
@@ -528,7 +528,7 @@ public class Reasoner {
 			    JPasswordField pwd = new JPasswordField(10);
 			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
 			    if (new String(pwd.getPassword()).equals("HRAdmin22")) 
-		        	answer = "Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype);
+		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
 			}
 		//Response - [List of Customers, Bookings, Admin ONLY] - End
@@ -557,14 +557,14 @@ public class Reasoner {
 		
 		// Location Question - [Start]
 		if (questiontype == "location") { 
-			answer = ("Reception: You can find the " + classtype.get(0).getClass().getSimpleName() + " " + Location(classtype, input));
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: You can find the " + classtype.get(0).getClass().getSimpleName() + " " + Location(classtype, input) +"</font>");
 			Answered = 1;
 		}
 		if ((questiontype == "intent" && classtype == theRoomList)
 				|| (questiontype == "intent" && classtype == theRecentThing)) {
 
 			// Can I Book the Room or Not (Book it or Not)
-			answer = ("Reception: " + RoomAvailable(classtype, input));
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: " + RoomAvailable(classtype, input) + "</font>");
 			Answered = 1;
 		}
 		// Location Question - [End]
@@ -575,7 +575,7 @@ public class Reasoner {
 		if (questiontype == "thanks") {
 			//This method gets username OS
 			String name = System.getProperty("user.name");
-			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: You are very welcome " + name +" "+ greeting + "." +"</font>");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: You are very welcome " + "<Strong>" + name +"</Strong> " + greeting + "." +"</font>");
 			Answered = 1;}
 		// Response - [Thank You] - Start
 		
@@ -585,7 +585,7 @@ public class Reasoner {
 		if (questiontype == "hi") {
 			//This method gets username OS
 			String name = System.getProperty("user.name");
-			answer = ("Reception: " + higreeting +" "+ name +" How may i help you ?");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: " + higreeting +" "+ "<Strong>" + name + "</Strong>" +" How may i help you ?" + "</font>");
 			Answered = 1;}
 		// Response - [Hi] - Start
         
@@ -595,7 +595,7 @@ public class Reasoner {
 		if (questiontype == "bye") {
 			//This method gets username OS
 			String name = System.getProperty("user.name");
-			answer = ("Reception: " + greeting +" "+ name +" See you soon.");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: " + greeting +"<Strong> "+ name +"</Strong>" +" See you soon.</Font>");
 			Answered = 1;}
 		// Response - [Bye] - Start
 		
@@ -737,9 +737,9 @@ public class Reasoner {
 		}
 		if (available) 
 		{
-			answer = "<font color=#2F4F4F  face = Roman  size = 5>There are rooms available to book</font>";
+			answer = "<font color=#2F4F4F  face = Roman  size = 4>There are rooms available to book</font>";
 		} else {
-			answer = "<font color=#e60000  face = Roman  size = 5>Sorry, Mentioned room type is fully booked.";
+			answer = "<font color=#e60000  face = Roman  size = 4>Sorry, Mentioned room type is fully booked.</font>";
 		}
 		// Check if the room is booked or not - End
 		
