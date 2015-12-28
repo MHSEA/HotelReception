@@ -80,7 +80,7 @@ public class Reasoner {
 			HotelSyn.add("place");
 			HotelSyn.add("hotel");
 			HotelSyn.add("hotels");
-			HotelSyn.add("rception");
+			HotelSyn.add("reception");
 			// Add synonyms for Hotel - End
 			
 			
@@ -98,6 +98,7 @@ public class Reasoner {
 			RoomSyn.add("quad");
 			RoomSyn.add("suite");
 			RoomSyn.add("big family");
+			RoomSyn.add("apartments");
 			// Add synonyms for Room - End
 
 			
@@ -144,6 +145,9 @@ public class Reasoner {
 			BookingSyn.add("bookings");
 			BookingSyn.add("booking");
 			BookingSyn.add("booked");
+			BookingSyn.add("reservations");
+			BookingSyn.add("reservation");
+			BookingSyn.add("reserve");
 			// Add synonyms for Booking - End
 			
 			
