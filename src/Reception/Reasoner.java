@@ -615,20 +615,20 @@ public class Reasoner {
 		
 		// Response - [Help] - Start
 		if (questiontype == "Help") {
-			answer = "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>You can use following commands:  </font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman>-------------------------------------------------------------------</font>"
-					+ "<br>" + "<font color=#330066  face = Roman  size = 5>Save: Save the conversation to the Desktop</font>"
-					+ "<br>" + "<font color=#008000  face = Roman  size = 5>Cls: Clear the screen</font>"
-					+ "<br>" + "<font color=#FF0000  face = Roman  size = 5>Exit: Quit the program</font>" 
+			answer = "<br>" + "<font color=#2F4F4F  face = Roman size = 5>You can use following commands:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman >-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#330066  face = Roman size = 4>Save: Save the conversation to the Desktop</font>"
+					+ "<br>" + "<font color=#008000  face = Roman size = 4>Cls: Clear the screen</font>"
+					+ "<br>" + "<font color=#FF0000  face = Roman size = 4>Exit: Quit the program</font>" 
 					+ "<br>" + "<br>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 5>Also you can ask following the questions:  </font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman>-------------------------------------------------------------------</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 5>Also you can ask following the questions:  </font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman >-------------------------------------------------------------------</font>"
 					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4 >-Where is the hotel</font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-I am looking for a double room</font>" 
-					+ "<br>" + "<font color=#2F4F4F   face = Roman  size = 4>-What kind of rooms are available</font>" 
-					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-Where are the room locations</font>" 
-					+ "<br>" + "<font color=#2F4F4F   face = Roman  size = 4>-How many rooms are available</font>"
-					+ "<br>" + "<font color=#2F4F4F  face = Roman  size = 4>-Can i book a room</font>" + "<br>";
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4>-I am looking for a double room</font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4>-What kind of rooms are available</font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4>-Where are the room locations</font>" 
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4>-How many rooms are available</font>"
+					+ "<br>" + "<font color=#2F4F4F  face = Roman size = 4>-Can i book a room</font>" + "<br>";
 			
 			Answered = 1;
 		}
@@ -682,8 +682,8 @@ public class Reasoner {
 		
 		// Response - [Null] - [Start]
 		if (Answered == 0) {
-			answer = ("<font color=#e60000  face = Roman  size = 5>Reception: Sorry I didn't understand that.</font>" + "<br> " +
-					  "<font color=#e60000  face = Roman  size = 5>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
+			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: Sorry I didn't understand that.</font>" + "<br> " +
+					  "<font color=#2F4F4F  face = Roman  size = 4>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
 			}
 		// Response - [Null] - [End]
 		
