@@ -652,7 +652,7 @@ public class Reasoner {
 		if (questiontype == "save") {
 			String desktop = System.getProperty ("user.home") + "\\Desktop\\";
 			Console.saveToFile();
-			Console.Confirmation("Outputhas been successfully saved to:\n" + desktop + "Reception-Output.html");
+			Console.Confirmation("Output has been successfully saved to:\n" + desktop + "Reception-Output.html");
 			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: Saved</font>");
 			
 			Answered = 1;
