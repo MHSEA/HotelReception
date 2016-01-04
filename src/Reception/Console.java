@@ -41,7 +41,7 @@ public class Console {
 	
 	
 	// Method For Save Feature - Start
-	public static void saveToFile() 
+	public static void saveToFile()
 	{
 	String desktop = System.getProperty ("user.home") + "//Desktop//";
 	File filepath = new File (desktop + "Reception-Output.html");
