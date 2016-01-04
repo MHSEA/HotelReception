@@ -105,7 +105,7 @@ public class MainReception {
 		      
 		      
 		      
-		    // Menu Item Action Listeners - Start
+		     // Menu Item Action Listeners - Start
 
 		      
 		      saveMenuItem.addActionListener(new ActionListener() {
