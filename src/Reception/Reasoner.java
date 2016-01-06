@@ -654,7 +654,6 @@ public class Reasoner {
 			Console.saveToFile();
 			Console.Confirmation("Output has been successfully saved to:\n" + desktop + "Reception-Output.html");
 			answer = ("<font color=#2F4F4F  face = Roman  size = 4>Reception: Saved</font>");
-			
 			Answered = 1;
 			
 		}
@@ -838,10 +837,11 @@ public class Reasoner {
 
 		Vector<String> yesorno = new Vector<String>();
 		if (classtype.isEmpty()) {
-			yesorno.add("<font color=#e60000  face = Roman  size = 4>Sorry I didn't understand that.</font>" + "<br> "
-					+ "<font color=#e60000  face = Roman  size = 4>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
+			yesorno.add("<font color=#e60000  face = Roman  size = 4>Reception: Sorry I didn't understand that.</font>" 
+					  + "<br> "
+					  + "<font color=#e60000  face = Roman  size = 4>You can type [ <Strong>Help</Strong> ] for more information and list of commands.</font>");
 		} else {
-			yesorno.add("<font color=#2F4F4F  face = Roman  size = 4>Requested Room is not available.</font> " + classtype.get(0).getClass().getSimpleName());
+			yesorno.add("<font color=#2F4F4F  face = Roman  size = 4>Reception: Requested Room is not available.</font> " + classtype.get(0).getClass().getSimpleName());
 		}
 
 		Integer counter = 0;
@@ -851,7 +851,7 @@ public class Reasoner {
 				if (input.contains(curbook.gettype().toLowerCase()))
 						{
 					counter = i;
-					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Requested Room is Available.<font color=#2F4F4F  face = Roman  size = 5>"); 
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Reception: Requested Room is Available.<font color=#2F4F4F  face = Roman  size = 5>"); 
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1; // force break
 				}
@@ -864,7 +864,7 @@ public class Reasoner {
 						|| input.contains(curmem.getlastName().toLowerCase())
 						|| input.contains(curmem.getCity().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we do have such a Customer</font>");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Reception: Yes we do have such a Customer</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -875,7 +875,7 @@ public class Reasoner {
 				Amenity curcat = (Amenity) thelist.get(i);
 				if (input.contains(curcat.getName().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we have such a Amenity</font>");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Reception: Yes we have such a Amenity</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}
@@ -887,7 +887,7 @@ public class Reasoner {
 				if (input.contains(curlend.getbookingID().toLowerCase())
 						|| input.contains(curlend.getcustomerID().toLowerCase())) {
 					counter = i;
-					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Yes we have such a Booking</font>");
+					yesorno.set(0, "<font color=#2F4F4F  face = Roman  size = 4>Reception: Yes we have such a Booking</font>");
 					yesorno.add(counter.toString());
 					i = thelist.size() + 1;
 				}

@@ -115,7 +115,7 @@ public class MainReception {
 					
 					String desktop = System.getProperty ("user.home") + "\\Desktop\\";
 					Console.saveToFile();
-					Console.Confirmation("Outputhas been successfully saved to:\n" + desktop + "Reception-Output.html");					
+					Console.Confirmation("Output has been successfully saved to:\n" + desktop + "Reception-Output.html");					
 					
 				}
 			});
