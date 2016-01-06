@@ -116,7 +116,7 @@ public class Reasoner {
 			AmenitySyn.add("service");
 			AmenitySyn.add("pool");
 			AmenitySyn.add("swim");
-			AmenitySyn.add("swiming");
+			AmenitySyn.add("swimming ");
 			AmenitySyn.add("disco");
 			AmenitySyn.add("drink");
 			AmenitySyn.add("club");
