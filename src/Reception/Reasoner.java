@@ -394,8 +394,10 @@ public class Reasoner {
 		
 		
 		// Commands - [CLS] - Start
-		if (input.contains("cls") 
-				|| input.contains("clean")) {
+		String cls = ("cls");
+		String clear = ("clear");
+		if (input.equals(cls) 
+				|| input.equals(clear)) {
 			questiontype = "CLS";
 			Console.Println("Clear Screen");
 		}
@@ -536,7 +538,7 @@ public class Reasoner {
 			    JPasswordField pwd = new JPasswordField(10);
 			    JOptionPane.showConfirmDialog(null, pwd,"Enter Password",JOptionPane.OK_CANCEL_OPTION,0,icon);
 			    if (new String(pwd.getPassword()).equals("HRAdmin22")) {
-		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
+		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following" + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
 			    }else {
 			    	JOptionPane.showMessageDialog(null,"Wrong Password!","Error",JOptionPane.WARNING_MESSAGE);
@@ -665,14 +667,14 @@ public class Reasoner {
 		if ((questiontype == "CLS") || (questiontype == "CLEAR"))
 		{
 			
-			Reception.MainReception.Info.setText(
-			"<font color=#2F4F4F  face = Roman  size = 4>Background information about the conversations topic will be displayed in this window.</font>");
+			Reception.MainReception.Info.setText("<head> <style> body {background-color: lightblue;} </style> </head>"
+					+ "<font face= Verdana >Background information about the conversations topic will be displayed in this window.");
 			Reception.MainReception.dialoghistory.removeAllElements();
 			Reception.MainReception.dialoghistory.add
-			("<font color=#2F4F4F  face = Roman  size = 5>>Welcome to the Hotel Reception Helpdesk, please type your question.</font> "
-			+ "<font color=#2F4F4F  face = Roman  size = 5>Following services are available: Available Rooms, Bookings, Checkin and Checkouts,</font> "
-			+ "Just ask me.</H3><br>"
-			+ "<font color=#2F4F4F  face = Roman  size = 4>To Start, you can type help to explore more. </font><br>");
+					  (("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk</H2> " +
+					          "<H3><font face=\"Verdana\">Following services are available: <br> Amenities, Locations, Available Rooms, Contact Details.</H3><br>" +
+					          "<H3><font face=\"Verdana\">To Start, you can type (Help) to explore more.</H3><br>"));
+	
 			Answered = 1;
 		}
 		// Response - [CLS] - End
@@ -750,7 +752,7 @@ public class Reasoner {
 		{
 			answer = "<font color=#2F4F4F  face = Roman  size = 4>There are rooms available to book</font>";
 		} else {
-			answer = "<font color=#e60000  face = Roman  size = 4>Sorry, Mentioned room type is fully booked.</font>";
+			answer = "<font color=#2F4F4F  face = Roman  size = 4>Sorry, Mentioned room type is fully booked.</font>";
 		}
 		// Check if the room is booked or not - End
 		
@@ -1064,7 +1066,7 @@ public class Reasoner {
 		try {
 			BufferedReader readit = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
 			String lineread = readit.readLine();
-			Console.Println("<font color=#2F4F4F  face = Roman  size = 5>Reader okay</font>");
+			Console.Println("Reader okay");
 			while (lineread != null) {
 				webtext = webtext + lineread;
 				lineread = readit.readLine();
@@ -1074,8 +1076,8 @@ public class Reasoner {
 			webtext = "<table width=\"700\"><tr><td>" + webtext + "</ul></td></tr></table>";
 
 		} catch (Exception e) {
-			webtext = "<font color=#2F4F4F  face = Roman  size = 5>Not yet</font>";
-			Console.Println("<font color=#2F4F4F  face = Roman  size = 5>Error connecting to wordnet</font>");
+			webtext = "Not yet";
+			Console.Println("Error connecting to wordnet");
 		}
 		return webtext;
 	}

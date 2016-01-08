@@ -41,6 +41,7 @@ public class MainReception {
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
 		Output.setEditable(false);                 // no one should be able to write in the display	
 		Output.setToolTipText("<html>Your dialog with the machine.</html>");
+
 		
 		Scroll = new JScrollPane(Output);          									                
 		Scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -53,8 +54,8 @@ public class MainReception {
 		Info = new JEditorPane("text/html","html string");	    
 		Info.setEditable(false);
 		Info.setEditorKit(new HTMLEditorKit());
-		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.");
-		
+		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.</font>");
+		Info.setBackground(new Color(238,238,238));
 		
 	    ScrollInfo = new JScrollPane(Info);   									                
 		ScrollInfo.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -227,10 +228,9 @@ public class MainReception {
 		Main.setSize(1300, 800);
 		Main.setVisible(true);                               // Don't forget
 		
-		dialoghistory.add("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk, please type your question.</H2> " +
-				          "<H3><font face=\"Verdana\">Following services are available: Available Rooms, Bookings, Checkin and Checkouts, " +
-					      "Just ask me.</H3><br>" +
-				          "<H3><font face=\"Verdana\">To Start, you can type help to explore more.</H3><br>");
+		dialoghistory.add("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk</H2> " +
+				          "<H3><font face=\"Verdana\">Following services are available: <br> Amenities, Locations, Available Rooms, Contact Details.</H3><br>" +
+				          "<H3><font face=\"Verdana\">To Start, you can type (Help) to explore more.</H3><br>");
 		Output.setText(dialoghistory.firstElement());
 		Input.requestFocusInWindow();
 	}                                                        // Constructor done
