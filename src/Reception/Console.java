@@ -72,13 +72,15 @@ public class Console {
 	{
     final ImageIcon icon = new ImageIcon("Resources//icon.png");
     JOptionPane.showMessageDialog(null,
-    "Hotel Reception" + "\n" +
+    "Hotel Reception v1.5" + "\n" +
+    "Submitted on: 11/01/2016" + "\n" +
     "Knowledge Based Systems" + "\n" +
-    "University of West London" + "\n" +
+    "University of West London" + "\n" + "\n" +
+    "Developers:" +
     "\nMehdi Amerinia" +
     "\nMoafaq Jamal Ashshareef" +
     "\nKrishnadas charankatbaiju" +
-    "\nSoheil Emadi" + "\n",
+    "\nSoheil Emadi" + "\n" + "\n", 
     "About",
     JOptionPane.QUESTION_MESSAGE, icon);
 	}
