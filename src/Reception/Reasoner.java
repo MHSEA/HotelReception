@@ -528,7 +528,7 @@ public class Reasoner {
 		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following " + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
 			} else {
-				JOptionPane.showMessageDialog(null,"Wrong Password!","Error",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null,"Password incorrect!","Error",JOptionPane.WARNING_MESSAGE,icon);
 	        	Answered = 1;
 				}
 			}
@@ -541,7 +541,7 @@ public class Reasoner {
 		        	answer = "<font color=#2F4F4F  face = Roman  size = 4>Reception: We have the following" + classtype.get(0).getClass().getSimpleName() + "s:" + ListAll(classtype) +"</font>";
 		    		Answered = 1;
 			    }else {
-			    	JOptionPane.showMessageDialog(null,"Wrong Password!","Error",JOptionPane.WARNING_MESSAGE);
+			    	JOptionPane.showMessageDialog(null,"Password incorrect!","Error",JOptionPane.WARNING_MESSAGE,icon);
 			        Answered = 1;
 					}
 			}
@@ -667,8 +667,6 @@ public class Reasoner {
 		if ((questiontype == "CLS") || (questiontype == "CLEAR"))
 		{
 			
-			Reception.MainReception.Info.setText("<head> <style> body {background-color: lightblue;} </style> </head>"
-					+ "<font face= Verdana >Background information about the conversations topic will be displayed in this window.");
 			Reception.MainReception.dialoghistory.removeAllElements();
 			Reception.MainReception.dialoghistory.add
 					  (("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk</H2> " +
@@ -1076,7 +1074,7 @@ public class Reasoner {
 			webtext = "<table width=\"700\"><tr><td>" + webtext + "</ul></td></tr></table>";
 
 		} catch (Exception e) {
-			webtext = "Not yet";
+			webtext = "Information";
 			Console.Println("Error connecting to wordnet");
 		}
 		return webtext;

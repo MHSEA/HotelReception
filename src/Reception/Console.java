@@ -80,7 +80,7 @@ public class Console {
     "\nMehdi Amerinia" +
     "\nMoafaq Jamal Ashshareef" +
     "\nKrishnadas charankatbaiju" +
-    "\nSoheil Emadi" + "\n" + "\n", 
+    "\nSoheil E" + "\n" + "\n", 
     "About",
     JOptionPane.QUESTION_MESSAGE, icon);
 	}

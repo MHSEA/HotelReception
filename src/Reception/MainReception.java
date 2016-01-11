@@ -44,27 +44,29 @@ public class MainReception {
 
 		
 		Scroll = new JScrollPane(Output);          									                
-		Scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		Scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		Scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		Scroll.setBorder(BorderFactory.createTitledBorder("Conversation:"));
 		Scroll.getViewport().setPreferredSize(new Dimension(500,600));
 		Scroll.getViewport().setOpaque(false);
-		Scroll.setBorder(null);
+		Scroll.setBorder(BorderFactory.createTitledBorder("Conversation"));
+		Output.setBackground(new Color(238,238,238));
 		
 		Info = new JEditorPane("text/html","html string");	    
 		Info.setEditable(false);
 		Info.setEditorKit(new HTMLEditorKit());
-		Info.setText("<font face=\"Verdana\">Background information about the conversations topic will be displayed in this window.</font>");
 		Info.setBackground(new Color(238,238,238));
 		
+		
+		
 	    ScrollInfo = new JScrollPane(Info);   									                
-		ScrollInfo.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		ScrollInfo.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		ScrollInfo.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		ScrollInfo.setBorder(BorderFactory.createTitledBorder("Extended Information:"));
 	    ScrollInfo.getViewport().setPreferredSize(new Dimension(500,600));
 	    ScrollInfo.getViewport().setOpaque(false);	
 	    ScrollInfo.setBorder(null);
-		
+	    ScrollInfo.setBorder(BorderFactory.createTitledBorder("Information"));
 	    Inframe = new JPanel();                             // Frame for the Inputelements
 		Outframe = new JPanel();                            // Frame for the Outputelements
 					
@@ -197,6 +199,7 @@ public class MainReception {
 			
 			// Setting GUI Background Image
     		Main.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File("Resources//BG.jpg")))));
+    		
     		// Setting GUI Window Icon 
     		Main.setIconImage(ImageIO.read(new File("Resources//Icon.png")));
     		// Initial Menu Bar to Main Frame
