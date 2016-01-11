@@ -45,7 +45,8 @@ public class MainReception {
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
 		Output.setEditable(false);                 // no one should be able to write in the display	
 		Output.setToolTipText("<html>Your conversation with the machine.</html>");
-
+		Output.setEditorKit(new HTMLEditorKit());
+		Output.setBackground(new Color(238,238,238));
 		
 		Scroll = new JScrollPane(Output);          									                
 		Scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -54,13 +55,12 @@ public class MainReception {
 		Scroll.getViewport().setPreferredSize(new Dimension(500,600));
 		Scroll.getViewport().setOpaque(false);
 		Scroll.setBorder(BorderFactory.createTitledBorder("Conversation"));
-		Output.setBackground(new Color(238,238,238));
+		
 		
 		Info = new JEditorPane("text/html","html string");	    
 		Info.setEditable(false);
 		Info.setEditorKit(new HTMLEditorKit());
 		Info.setBackground(new Color(238,238,238));
-		
 		
 		
 	    ScrollInfo = new JScrollPane(Info);   									                
