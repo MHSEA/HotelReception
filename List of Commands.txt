@@ -1,5 +1,33 @@
 Commands:
 
+
+List Commands
+=============================================
+List all rooms
+List all amenities
+What kind of rooms are available
+What kind of services are available
+
+(Manager Restricted Area - Login Required)
+List all customers
+List all bookings
+
+
+Location Related Commands
+=============================================
+Where is the hotel
+Where can i find pool
+Where are the single rooms
+Where are the double rooms
+Where can i send email
+where is gym
+where can i have breakfast
+where can i have dinner
+where can i dance
+where can i exercise
+where can i swim
+
+
 Single Commands
 =============================================
 
@@ -9,23 +37,32 @@ bye
 help
 ?
 save
+cls
+clear
 
-where is the hotel
+
+Quantity Related Commands
+=============================================
 How many rooms are available
+How many services are available
+How many customers are in hotel
+How many bookings are available
+how many hotels are available
+
+
+Booking Related Commands
+=============================================
 Can i book a room
 I am looking for a single room
 I am looking for a double room
 I am looking for a room for two people
 I am looking for a triple room
 I am looking for a quad room
-What kind of rooms are available
-What kind of services are available
+
 where can i send a fax
 where can i swim
 where can exercise
 where can i have food
-list all rooms
-list all services
 where can i dance
 
 
