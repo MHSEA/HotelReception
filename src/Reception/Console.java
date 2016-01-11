@@ -14,7 +14,7 @@ public class Console {
 	public static void Confirmation(String message)
 		{
 	    Component Confirmation = null;
-	    final ImageIcon icon = new ImageIcon("Resources//icon.png");
+	    final ImageIcon icon = new ImageIcon("Resources//Icon52x52.png");
 	    JOptionPane.showMessageDialog(Confirmation, message, "Hotel Reception",JOptionPane.QUESTION_MESSAGE, icon);
 		}
 		
@@ -70,7 +70,7 @@ public class Console {
 	// Method For Menu Help -> About - Start
 	public static void about() 
 	{
-    final ImageIcon icon = new ImageIcon("Resources//icon.png");
+    final ImageIcon icon = new ImageIcon("Resources//Icon52x52.png");
     JOptionPane.showMessageDialog(null,
     "Hotel Reception v1.5" + "\n" +
     "Submitted on: 11/01/2016" + "\n" +
