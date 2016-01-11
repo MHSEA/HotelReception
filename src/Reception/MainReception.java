@@ -40,7 +40,7 @@ public class MainReception {
 		
 		Output = new JEditorPane("text/html","<b>Initial text</b>");
 		Output.setEditable(false);                 // no one should be able to write in the display	
-		Output.setToolTipText("<html>Your dialog with the machine.</html>");
+		Output.setToolTipText("<html>Your conversation with the machine.</html>");
 
 		
 		Scroll = new JScrollPane(Output);          									                

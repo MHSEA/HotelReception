@@ -666,7 +666,7 @@ public class Reasoner {
 		// Response - [CLS] - Start
 		if ((questiontype == "CLS") || (questiontype == "CLEAR"))
 		{
-			
+			Reception.MainReception.Info.setText(null);
 			Reception.MainReception.dialoghistory.removeAllElements();
 			Reception.MainReception.dialoghistory.add
 					  (("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk</H2> " +
