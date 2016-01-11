@@ -24,10 +24,11 @@ public class MainReception {
 	public String displaytext = "";
 	public static String question = "";
 	public static String answer = "";
+	public String date;
+	public String time;
 	
-
 	Reasoner myReasoner;
-	
+
 	public MainReception() {               // Constructor for an Instance of SimpleGUI
 		
 		myReasoner = new Reasoner(this);         // Instantiate a "brain", reference this GUI to it										                      		
@@ -84,12 +85,12 @@ public class MainReception {
 		      //create a menu bar
 		      final JMenuBar menuBar = new JMenuBar();
 
+		      
 		      // Create Menu - Start
 		      JMenu fileMenu = new JMenu("File"); 
 		      JMenu helpMenu = new JMenu("Help");
 		      JMenu linkMenu = new JMenu("Link");
 		      // Create Menu - End
-		      
 		      
 		      
 		      // Create Menu Items - Start
@@ -109,8 +110,6 @@ public class MainReception {
 		      
 		      
 		     // Menu Item Action Listeners - Start
-
-		      
 		      saveMenuItem.addActionListener(new ActionListener() {
 				
 				@Override
@@ -191,8 +190,7 @@ public class MainReception {
 		      menuBar.add(linkMenu);
 		      menuBar.add(helpMenu);  
 		      // Add Menus to Menu Bar - End
-   
-		   
+  
 
 	      
 		try {
