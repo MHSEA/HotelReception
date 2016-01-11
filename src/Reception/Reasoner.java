@@ -349,7 +349,7 @@ public class Reasoner {
 
 		
 		// Commands - [Hi] - Start
-		if (input.contains("hi") 
+		if (input.contains("hi") && (input.length() == 2)
 				|| input.contains("hello")
 				|| input.contains("hey")) 
 		{
@@ -361,7 +361,7 @@ public class Reasoner {
 		
 		// Commands - [Bye] - Start
 		if (input.contains("bye") 
-				|| input.contains("good buy")) 
+				|| input.contains("good bye")) 
 		{
 			questiontype = "bye";
 			Console.Println("Bye Message");
