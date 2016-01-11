@@ -226,7 +226,7 @@ public class MainReception {
 		});
 
 		Main.pack();
-		Main.setSize(1300, 800);
+		Main.setSize(1250, 755);
 		Main.setVisible(true);                               // Don't forget
 		
 		dialoghistory.add("<H2><font face=\"Verdana\">Welcome to the Hotel Reception Helpdesk</H2> " +
